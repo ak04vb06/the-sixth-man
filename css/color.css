@@ -3,7 +3,7 @@
 .widget_trending_news .nav-tabs li:hover a,.widget_twitter ul li p a,.widget_awards .slick-arrow:hover i,.sportsmagazine-partner-slider .slick-arrow:hover i,.sportsmagazine-bloglarge ul li:hover .sportsmagazine-readmore-btn,
 .sportsmagazine-player-thumb-text h3 span,.sportsmagazine-player-list ul li:hover .sportsmagazine-player-list-text h5 a,.sportmagazine-score-counter p span,.sportsmagazine-modern-player figure figcaption h3 > span,
 .star-rating:before,.star-rating-box:before,.sportsmagazine-shop-grid section > .price-cart {
-    color: #ffdc11;
+    color: skyblue;
 }
 .sportsmagazine-bgcolor, .sportsmagazine-bgcolorhover:hover,.navbar-nav > li > a:before,.navbar-nav > li > a:after,.footer-widget-title h2:before,.footer-widget-title h2:after,.widget_gallery ul li a:before,
 .sportsmagazine-copyright-left:before,.sportsmagazine-copyright-right:after,.sportsmagazine-fixture-slider .slick-arrow:hover,ul li:hover .sportsmagazine-link-btn,.sportsmagazine-add-banner figcaption:before,
@@ -12,22 +12,22 @@
 .sportsmagazine-contactus-info ul li i,blockquote:after,blockquote span:before,.sportsmagazine-tags a:hover,.sportsmagazine-prenxt-post ul li figure a:before,.sportsmagazine-bloglarge-text time,
 .sportsmagazine-bloglarge ul li:hover .sportsmagazine-readmore-btn:before,.sportsmagazine-blogmodren-option,.sportsmagazine-player-list figure:before,.sportsmagazine-player-list figure:after,
 .sportsmagazine-forword-btn,.sportsmagazine-fixture-gallery figure span,.sportsmagazine-fixture-gallery figure figcaption time,.sportsmagazine-fixture-wrap:before,.sportsmagazine-modren-fixture-text {
-    background-color: #ffdc11;
+    background-color: skyblue;
 }
 .sportsmagazine-bordercolor, .sportsmagazine-bordercolorhover:hover,.sportsmagazine-fancy-title,.sportsmagazine-topstrip-two {
-    border-color: #ffdc11;
+    border-color: black;
 }
 .sportsmagazine-modal-close:before,.sportsmagazine-fixture-slider-layer ul:before,.sportsmagazine-featured-slider .slick-arrow-left.slick-arrow:hover:before,
 .widget_trending_news .nav-tabs li.active a:after,.sportsmagazine-modren-team-one:before,.sportsmagazine-modren-team-two:before {
-	border-top-color: #ffdc11;
+	border-top-color: #555555;
 }
 .sportsmagazine-login-box form label:after,.sportsmagazine-fixture-slider .slick-arrow:hover:after,.sportsmagazine-contactus-info ul li i:after {
-	border-left-color: #ffdc11;
+	border-left-color: skyblue;
 }
 .sportsmagazine-fixture-slider .slick-arrow:hover:before,.sportsmagazine-player-slider-image:before {
-	border-right-color: #ffdc11;
+	border-right-color: skyblue;
 }
 .sportsmagazine-fancy-title:before,.sportsmagazine-featured-slider .slick-arrow-right.slick-arrow:hover:after,.sportsmagazine-player-slider-nav:after,
 .sportsmagazine-blogmodren-option:before,.sportsmagazine-fixture-gallery figure:before,.sportsmagazine-modren-team-one:after,.sportsmagazine-modren-team-two:after {
-	border-bottom-color: #ffdc11;
+	border-bottom-color: skyblue;
 }
