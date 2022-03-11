@@ -1198,7 +1198,7 @@ address { font-style: italic; }
 .sportsmagazine-match-result {
     float: left;
     width: 100%;
-    background: url(images/High_resolution_wallpaper_background_ID_77702063054.jpg);
+    background: url(images/game-result.png);
     background-repeat: no-repeat;
     background-color: #292c31;
     margin-bottom: 40px;
@@ -1210,13 +1210,15 @@ address { font-style: italic; }
     padding: 31px 0px 23px 0px;
 }
 .sportsmagazine-match-title h4 {
-    color: whitesmoke;
+    color: black;
     margin-bottom: 3px;
     font-weight: 600;
+
 }
 .sportsmagazine-match-title span {
-    color: whitesmoke;
+    color:aliceblue;
     font-size: 14px;
+
 }
 .sportsmagazine-match-result ul {
     float: left;
@@ -1239,9 +1241,10 @@ address { font-style: italic; }
 .sportsmagazine-match-result ul li p {
     font-size: 28px;
     margin-bottom: 0px;
-    color: white;
+    color: palevioletred;
     font-weight: bold;
     position: relative;
+    background-color: whitesmoke;
 }
 .sportsmagazine-match-result ul li.sportsmagazine-match-score {
     width: 47%;
@@ -1260,7 +1263,8 @@ address { font-style: italic; }
 }
 .sportsmagazine-match-result ul li span {
     font-size: 13px;
-    color: #ffffff;
+    color: black;
+    background-color: white;
 }
 .sportsmagazine-match-result ul li h4 a { color: #ffffff; }
 /* Blog's */
@@ -1652,8 +1656,8 @@ ul li:last-child .sportsmagazine-blog-list-wrap {
 .ranking-title-table {
     display: table;
     width: 100%;
-    background-color: #f5f5f5;
-    padding: 16px 0px 15px 30px;
+    background-color: skyblue;
+    padding: 16px 0px 15px 78px;
 }
 .ranking-title-row                      { display: table-row; }
 .ranking-title-table li:first-child     { padding: 0px; }
@@ -1663,7 +1667,7 @@ ul li:last-child .sportsmagazine-blog-list-wrap {
     list-style: none;
     color: #292c31;
     font-weight: bold;
-    padding: 0px 2px;
+    padding: 0px 5px;
 }
 .ranking-content-table {
     display: table;
@@ -1674,7 +1678,7 @@ ul li:last-child .sportsmagazine-blog-list-wrap {
 .ranking-content-table li {
     display: table-cell;
     list-style: none;
-    color: #292c31;
+    color: black;
     vertical-align: middle;
     padding: 16px 13px 12px 13px;
 }
@@ -1699,7 +1703,7 @@ ul li:last-child .sportsmagazine-blog-list-wrap {
     padding: 16px 7px 12px 13px;
 }
 .ranking-content-table li:nth-child(2) { width: 47%; }
-.ranking-content-table:nth-child(even) { background-color: #f5f5f5; }
+.ranking-content-table:nth-child(even) { background-color: white; }
 /* Widget Popular News */
 .widget_popular_news ul,.widget_popular_news ul li {
     float: left;
