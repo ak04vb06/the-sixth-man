@@ -470,7 +470,7 @@ address { font-style: italic; }
 #sportsmagazine-header .container { position: relative; }
 .nav > li.sportsmagazine-megamenu-li,#sportsmagazine-header [class*="col-md-"] { position: static; }
 .sportsmagazine-megamenu {
-    position: absolute;
+    position:absolute;
     left: 0%;
     top: 100%;
     width: 100%;
