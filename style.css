@@ -1980,7 +1980,7 @@ ul li:last-child .sportsmagazine-blog-list-wrap {
     width: 100%;
 }
 .sportsmagazine-subheader {
-    background: url(extra-images/sub-header.jpg);
+    background: url(extra-images/backgroundJogos.jpg);
     padding: 82px 0 132px;
     position: relative;
     background-position: center;
@@ -4574,7 +4574,7 @@ blockquote span:before {
 }
 .sportsmagazine-teams-match figure ~ .sportsmagazine-first-team-info {
     margin: 0px 48px 0px 0px;
-    text-align: right;
+    text-align: center;
     padding: 17px 20px 0 0;
     line-height: 1;
 }
@@ -4593,7 +4593,7 @@ blockquote span:before {
     margin: 0px 0px 0px 55px;
     padding: 14px 0px 0px 19px;
     line-height: 1;
-    text-align: left;
+    text-align: center;
 }
 
 .sportsmagazine-buy-ticket {
@@ -4603,7 +4603,8 @@ blockquote span:before {
 }
 .sportsmagazine-buy-ticket-text {
     float: left;
-    line-height: 1.5;
+    line-height: 1  .5;
+
 }
 .sportsmagazine-buy-ticket-text h5 {
     font-weight: bold;
