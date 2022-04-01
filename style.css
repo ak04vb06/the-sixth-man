@@ -7917,7 +7917,7 @@ blockquote span:before {
 /* Widget Contact Info */
 .footer-logo {
     float: left;
-    width: 100%;
+    width: 50%;
     margin-bottom: 17px;
 }
 .widget_contact_info p {
