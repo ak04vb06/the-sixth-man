@@ -12,7 +12,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <style>
         body{
             background-color: #e9e9e9;
@@ -37,6 +37,9 @@
         .form-check-input:checked {
             background-color: rgba(100, 100, 100, 0.9);
             border-color: #101140;
+        }
+        a:link{
+            text-decoration: none;
         }
     </style>
     <title>Backoffice</title>

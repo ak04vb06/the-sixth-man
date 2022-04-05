@@ -4596,10 +4596,20 @@ blockquote span:before {
     text-align: center;
 }
 
+.sportsmagazine-buy-ticket table {
+    font-size: 12px;
+    line-height: 12px;
+
+}
+
 .sportsmagazine-buy-ticket {
     float: left;
     width: 33.333%;
-    padding: 34px 27px 0px 34px;
+    padding: 15px  10px 5px 10px;
+}
+.sportsmagazine-buy-ticket .table{
+    margin: 0px !important;
+    width: 100%;
 }
 .sportsmagazine-buy-ticket-text {
     float: left;
