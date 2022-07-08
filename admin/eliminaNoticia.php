@@ -10,7 +10,7 @@ $dados=mysqli_fetch_array($res);
 ?>
 <div class="container form ">
 
-    <h1>edita Notícia</h1>
+    <h1>elimina Notícia</h1>
     <form action="confirmaEliminaNoticia.php" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="clube" class="form-label">Título</label>
@@ -32,7 +32,7 @@ $dados=mysqli_fetch_array($res);
 
 
         <div class="mb-3 text-end">
-            <input name="idNoticia" type="hidden" class="btn-sm btn-primary" value="<?php echo $id?>">
+            <input name="noticiaId" type="hidden" class="btn-sm btn-primary" value="<?php echo $id?>">
             <input onclick="window.location='listaNoticias.php';" type="button" class="btn-sm btn-secondary" value="voltar">
             <input type="submit" class="btn-sm btn-danger" value="Confirma">
         </div>
