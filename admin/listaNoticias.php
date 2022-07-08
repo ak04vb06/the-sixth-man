@@ -10,7 +10,7 @@ $res=mysqli_query($con,$sql);
     <table class="table table-striped">
         <tr>
             <td colspan="7" style="text-align: right">
-                <a class="btn-sm btn-success" href="novoNoticia.php">Nova Noticia</a>
+                <a class="btn-sm btn-success" href="novaNoticia.php">Nova Noticia</a>
             </td>
         </tr>
         <tr>
@@ -21,7 +21,7 @@ $res=mysqli_query($con,$sql);
             <th style="width: 25%">Resumo</th>
 
 
-            <th colspan="2">Opções</th>
+            <th colspan="2">OpÃ§Ãµes</th>
 
         </tr>
         <?php
@@ -30,7 +30,7 @@ $res=mysqli_query($con,$sql);
             <tr>
                <td><img src="../<?php echo $dados['noticiaImagemURL']?>" width="35"></td>
                 <td><?php echo $dados['noticiaTitulo']?></td>
-                <td><?php echo $dados['noticiaResumo']?></td>
+                <td><?php echo resumo($dados['noticiaResumo'],100);?></td>
 
                 <td style="text-align: center"><a class="btn-sm btn-primary" href="editaNoticia.php?id=<?php echo $dados['noticiaId']?>"><i class="bi bi-pencil"></i> Editar</a></td>
                 <td style="text-align: center"><a class="btn-sm btn-danger" href="eliminaNoticia.php?id=<?php echo $dados['noticiaId']?>"><i class="bi bi-trash"></i> Eliminar</a></td>
