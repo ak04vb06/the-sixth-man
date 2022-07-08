@@ -32,10 +32,6 @@ $dados=mysqli_fetch_array($res);
             <img src="../<?php echo $dados['clubeLogoURL']?>" width="120">
         </div>
 
-        <div class="mb-3">
-            <label for="logo" class="form-label">Logótipo</label>
-            <input class="form-control" type="file" id="logo" name="logo">
-        </div>
         <div class="mb-3 text-end">
             <input type="hidden" value="<?php echo $dados['clubeId']?>" name="clubeId">
             <input onclick="window.location='listaClubes.php';" type="button" class="btn-sm btn-secondary" value="voltar">

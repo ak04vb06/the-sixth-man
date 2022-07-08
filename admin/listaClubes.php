@@ -9,7 +9,7 @@
         <table class="table table-striped">
             <tr>
                 <td colspan="7" style="text-align: right">
-                    <a class="btn-sm btn-success" href="novoClube.php">Novo clube</a>
+                    <a class="btn-sm btn-success" href="novoClube.php" >Novo clube </a>
                 </td>
             </tr>
             <tr>

@@ -18,18 +18,16 @@
     <div class="container">
         <table class="table table-striped">
             <tr>
-                <td colspan="8" style="text-align: right">
+                <td colspan="9" style="text-align: right">
                     <a class="btn-sm btn-success" href="novoJogo.php">Novo jogo</a>
                 </td>
             </tr>
             <tr>
-                <th style="width: 10%">Data</th>
-                <th style="width: 5%">Logo</th>
-                <th style="width: 25%">Nome</th>
-                <th style="width: 5%">Logo</th>
-                <th style="width: 25%">Nome</th>
-                <th style="width: 10%">Resultado</th>
-                <th colspan="2">Opções</th>
+                <th style="width: 5%">Data</th>
+                <th colspan="2" style="width: 30%">Equipa Casa</th>
+                <th colspan="2" style="width: 30%">Equipa Fora</th>
+                <th style="width: 5%">Resultado</th>
+                <th colspan="3" >Opções</th>
 
             </tr>
             <?php
@@ -42,6 +40,7 @@
                     <td style="text-align: center"><img src="../<?php echo $dados['logoFora']?>" width="35"></td>
                     <td><?php echo $dados['nomeFora'].' - <i>'.$dados['sobrenomeFora'].'</i>'?></td>
                     <td style="text-align: center"><?php echo $dados['jogoResultadoCasa'].' - '.$dados['jogoResultadoFora']?></td>
+                    <td style="text-align: center"><a class="btn-sm btn-secondary" href="editaResultado.php?id=<?php echo $dados['jogoId']?>"><i class="bi bi-dribbble"></i> Resultados</a></td>
                     <td style="text-align: center"><a class="btn-sm btn-primary" href="editaJogo.php?id=<?php echo $dados['jogoId']?>"><i class="bi bi-pencil"></i> Editar</a></td>
                     <td style="text-align: center"><a class="btn-sm btn-danger" href="eliminaJogo.php?id=<?php echo $dados['jogoId']?>"><i class="bi bi-trash"></i> Eliminar</a></td>
                 </tr>

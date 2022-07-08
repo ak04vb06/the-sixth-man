@@ -9,7 +9,7 @@ top();
 <div class="container form ">
 
     <h1>Novo Jogo</h1>
-    <form action="confirmaNovoClube.php" method="post" enctype="multipart/form-data">
+    <form action="confirmaNovoJogo.php" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>
             <input type="date" class="form-control" id="data" name="dataJogo">
