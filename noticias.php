@@ -57,17 +57,14 @@
                                     while($dados=mysqli_fetch_array($res)){
                                     ?>
                                     <li class="col-md-12">
-                                        <figure><a href="blog-detail.html"><img src="<?php echo $dados['noticiaImagemURL']?>" alt=""></a></figure>
+                                        <figure><a href="blog-detail.html"><img src="<?php echo $dados['noticiaImagemURL']?>" alt="" ></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
                                             <time datetime="2008-02-14 20:00"><?php echo strftime('%A, %d de %B de %Y', strtotime($dados['noticiaData'])); ?></time>
                                             <h3><a href="blog-detail.html"><?php echo $dados['noticiaTitulo']?></a></h3>
                                             <p></p>
-                                            <a href="blog-detail.html" class="sportsmagazine-readmore-btn">READ MORE <i class="fa fa-arrow-circle-o-right"></i></a>
-                                            <ul class="sportsmagazine-article-options">
-                                                <li><a href="#404.html"><i class="fa fa-thumbs-o-up"></i> 320</a></li>
-                                                <li><a href="#404.html"><i class="fa fa-eye"></i> 840</a></li>
-                                                <li><a href="#404.html"><i class="fa fa-user"></i> Julia Martyn</a></li>
-                                            </ul>
+                                            <a href="blog-detail.html" ><?php echo $dados['noticiaResumo']?>  </a>
+                                            <p></p>
+                                            <a href="blog-detail.html"> <i class="fa fa-arrow-circle-o-right"> Read More </i>
                                         </div>
                                     </li>
                                     <?php
