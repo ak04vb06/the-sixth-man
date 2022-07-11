@@ -1,7 +1,7 @@
 <?php
     include("admin/includes/config.inc.php");
     $con=mysqli_connect(HOST,USER,PWD,DATABASE);
-    function drawTop($menu=HOME){
+function drawTop($menu=HOME){
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,4 +93,100 @@
 
 <?php
     }
-?>
+
+function drawBottom(){
+    ?>
+            <!--// Footer \\-->
+        <footer id="sportsmagazine-footer" class="sportsmagazine-footer-one">
+
+            <!--// Footer Widget \\-->
+            <div class="sportsmagazine-footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <!--// Widget Contact Info \\-->
+                        <aside class="col-md-4 widget widget_contact_info">
+                            <a href="index.html" class="footer-logo"><img src="images/nba-logoman-75-word_white.svg" alt=""></a>
+
+                            <ul class="sportsmagazine-social-network">
+
+                                <!--  <li><a href="https://twitter.com/login" class="sportsmagazine-colorhover fa fa-twitter-square"></a>   GOAT page</li> -->
+
+                            </ul>
+                            <ul class="sportsmagazine-info-list">
+                                <li><i class="fa fa-envelope"></i> <span><a>goatbasket@gmail.com</a></span></li>
+                            </ul>
+                        </aside>
+                        <!--// Widget Contact Info \\-->
+
+                        <!--// Widget Twitter \\-->
+                        <aside class="col-md-4 widget widget_twitter">
+                            <div class="footer-widget-title"><h2>Twitter Feeds</h2></div>
+                            <ul>
+                                <li>
+                                    <i class="fa fa-twitter"></i> <span>@ESPNNBA</span>
+                                    <p> Isaiah Thomas está de volta a Nba , assina novo contrato de 10 dias com os hornets <a href="https://twitter.com/espnnba/status/1499215162695430149">@ESPNNBA</a></p>
+
+                                </li>
+                                <li>
+                                    <i class="fa fa-twitter"></i> <span>@NBATV</span>
+                                    <p>Ja Morant com recorde de pontos e incrível «buzzer-beater»  <a href="https://twitter.com/nbaportugalcom/status/1498602708806295552">@NbaTv</a></p>
+
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+                        <!--// Footer Widget \\-->
+
+
+
+        </footer>
+        <!--// Footer \\-->
+
+        <div class="clearfix"></div>
+    </div>
+    <!--// Main Wrapper \\-->
+
+    <!-- SearchModal -->
+        <div class="searchmodal modal fade" id="searchModal" tabindex="-1" role="dialog">
+            <a href="#" data-dismiss="modal" class="sportsmagazine-modal-close"><i class="icon-uniF106"></i></a>
+            <div class="modal-dialog" role="document">
+                <div class="container">
+                    <div class="row">
+                        <form class="sportsmagazine-search-box">
+                            <input type="text" value="Search Your Keyword" onblur="if(this.value == '') { this.value ='Search Your Keyword'; }" onfocus="if(this.value =='Search Your Keyword') { this.value = ''; }">
+                            <input type="submit" value="">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    <!-- jQuery (necessary for JavaScript plugins) -->
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/slick.slider.min.js"></script>
+    <script type="text/javascript" src="script/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="script/fancybox.pack.js"></script>
+    <script type="text/javascript" src="script/isotope.min.js"></script>
+    <script type="text/javascript" src="script/progressbar.js"></script>
+    <script type="text/javascript" src="script/counter.js"></script>
+    <script type="text/javascript" src="script/functions.js"></script>
+
+  </body>
+
+</html>
+        <?php
+}
+    ?>
