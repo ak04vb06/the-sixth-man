@@ -464,7 +464,7 @@ address { font-style: italic; }
     top: 10px;
     font-weight: 300;
 }
-.sportsmagazine-dropdown-menu > li:hover > a { background-color: #fafafb; }
+.sportsmagazine-dropdown-menu > li:hover > a { background-color: #fff; }
 .sportsmagazine-dropdown-menu li:last-child a { border: none; }
 /* Mega Menu */
 #sportsmagazine-header .container { position: relative; }

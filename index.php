@@ -155,20 +155,20 @@ drawTop(HOME);
                             <div class="sportsmagazine-blog sportsmagazine-bloglarge">
                                 <ul class="row">
                                     <li class="col-md-12">
-                                        <figure><a href="nóticias.html"><img src="Página%20principal%20img/jay-bros%20lost.jpg" alt=""></a></figure>
+                                        <figure><a href="noticias.html"><img src="Página%20principal%20img/jay-bros%20lost.jpg" alt=""></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
                                             <time datetime="2022-06-17 20:00">sexta-feira 17 junho 2022</time>
-                                            <h3><a href="nóticias.html">Os jay brothers vs os splash brothers </a></h3>
+                                            <h3><a href="noticias.html">Os jay brothers vs os splash brothers </a></h3>
                                             <p>As primeiras finais da equipa jovem dos boston celtics foi boa .Cada jogadore dos celtics jogou no máximo para chegar nas finais e ganhar 2 jogos contra os Warriors, infelizemente perderam, jayson tatum fez uma campanha de playoff 2022 incrível menos nas finais onde a defesa dos warrios sufocou a dos celtics  mas mesmo assim notavelmente jaylen brown, marcus smart,grant williams e robert williams III para citar apenas alguns fizeram uma grande prestação .  .</p>
                                             <a href=nóticias.html" class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
 
                                         </div>
                                     </li>
                                     <li class="col-md-12">
-                                        <figure><a href="nóticias.html"><img src="Página%20principal%20img/Paolo-Banchero.jpg" alt=""></a></figure>
+                                        <figure><a href="noticias.html"><img src="Página%20principal%20img/Paolo-Banchero.jpg" alt=""></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
                                             <time datetime="2008-02-14 20:00">quinta-feira 23, 2022</time>
-                                            <h3><a href="nóticias.html">Paolo Banchero foi a primeira escolha dos Orlando Magic</a></h3>
+                                            <h3><a href="noticias.html">Paolo Banchero foi a primeira escolha dos Orlando Magic</a></h3>
                                             <p>numa gala que se realizou no Barclays Center, em Brooklyn, nos Estados Unidos, onde esteve presente Kylian Mbappé, jovem jogador-promessa de futebol, ‘militante’ do PSG. Assim, Banchero juntar-se-á a prometedores nomes como Jalen Suggs, Cole Anthony, Franz Wagner, Jonathan Isaac e Wendell Carter Jr.</p>
                                             <a href=nóticias.html" class="sportsmagazine-readmore-btn">READ MORE <i class="fa fa-arrow-circle-o-right"></i></a>
 
@@ -176,12 +176,12 @@ drawTop(HOME);
                                     </li>
 
                                     <li class="col-md-12">
-                                        <figure><a href="nóticias.html"><img src="Página%20principal%20img/kyrie%20and%20kd%20trade.jpg" alt=""></i></a></figure>
+                                        <figure><a href="noticias.html"><img src="Página%20principal%20img/kyrie%20and%20kd%20trade.jpg" alt=""></i></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
                                             <time datetime="2008-02-14 20:00">segunda-feira 27, 2022</time>
-                                            <h3><a href="nóticias.html">Kyrie Irving decidiu ficar no Brooklyn Nets e Kevin Durant pede para sair dos Brooklyn Nets</a></h3>
+                                            <h3><a href="noticias.html">Kyrie Irving decidiu ficar no Brooklyn Nets e Kevin Durant pede para sair dos Brooklyn Nets</a></h3>
                                             <p>Irving exerceu a sua player option com os Nets e vai permanecer no time na temporada 2022-23. De acordo com o jornalista Shams Charania, do The Athletic, ele vai receber 37 milhões de dólares.De acordo com informações avançadas por Adrian Wojnarowski, da ESPN, e Shams Charania, do The Athletic, os dois principais insiders da NBA, o internacional norte-americano fez o pedido diretamente a Joe Tsai, dono da equipa.as duas formações que se encontram no topo das preferências de Durant são os Phoenix Suns e os Miami Heat. Contudo, KD tem mais quatro anos de contrato, está no pico do seu valor e a equipa que decidir fazer a troca pelo jogador sabe que terá controlo contratual.</p>
-                                            <a href="nóticias.html" class="sportsmagazine-readmore-btn">READ MORE <i class="fa fa-arrow-circle-o-right"></i></a>
+                                            <a href="noticias.html" class="sportsmagazine-readmore-btn">READ MORE <i class="fa fa-arrow-circle-o-right"></i></a>
 
                                         </div>
                                     </li>
@@ -405,35 +405,35 @@ drawTop(HOME);
                                     <li>
                                         <span>01</span>
                                         <div class="popular_news_text">
-                                            <a href="nóticias.html">Cam Reddish, dos Knicks, fora da temporada com lesão no ombro</a>
+                                            <a href="noticias.html">Cam Reddish, dos Knicks, fora da temporada com lesão no ombro</a>
                                             <time datetime="2008-02-14 20:00">10 março, 2022</time>
                                         </div>
                                     </li>
                                     <li class="widget-injuries">
                                         <span>02</span>
                                         <div class="popular_news_text">
-                                            <a href="nóticias.html">The Clovers defense must reinvent itself without</a>
+                                            <a href="noticias.html">The Clovers defense must reinvent itself without</a>
                                             <time datetime="2008-02-14 20:00">04 março, 2022</time>
                                         </div>
                                     </li>
                                     <li class="widget-theleague">
                                         <span>03</span>
                                         <div class="popular_news_text">
-                                            <a href="nóticias.html">As dificuldades de Russell Westbrook foram uma parte fundamental – mas não a única razão – da errática temporada 2021-22 dos Lakers.</a>
+                                            <a href="noticias.html">As dificuldades de Russell Westbrook foram uma parte fundamental – mas não a única razão – da errática temporada 2021-22 dos Lakers.</a>
                                             <time datetime="2008-02-14 20:00">04 março, 2022</time>
                                         </div>
                                     </li>
                                     <li>
                                         <span>04</span>
                                         <div class="popular_news_text">
-                                            <a href="nóticias.html">Peso das expectativas inegáveis para Russell Westbrook, Lakers</a>
+                                            <a href="noticias.html">Peso das expectativas inegáveis para Russell Westbrook, Lakers</a>
                                             <time datetime="2008-02-14 20:00"> 04 Março , 2022</time>
                                         </div>
                                     </li>
                                     <li>
                                         <span>05</span>
                                         <div class="popular_news_text">
-                                            <a href="nóticias.html">Kyle Kuzma e Kentavious Caldwell-Pope não estão ressentidos com o Lakers após troca</a>
+                                            <a href="noticias.html">Kyle Kuzma e Kentavious Caldwell-Pope não estão ressentidos com o Lakers após troca</a>
                                             <time datetime="2008-02-14 20:00">10 Março , 2022</time>
                                         </div>
                                     </li>

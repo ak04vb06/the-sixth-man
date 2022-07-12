@@ -36,7 +36,7 @@
             while ($dados=mysqli_fetch_array($res)){
                 ?>
                 <tr>
-                    <td><?php echo $dados['jogoData']?></td>
+                    <td align="center"><?php echo $dados['jogoData']?></td>
                     <td  style="text-align: center; width:5%"><img src="../<?php echo $dados['logoCasa']?>" width="35"></td>
                     <td align="center"><?php echo $dados['nomeCasa'].' - <i>'.$dados['sobrenomeCasa'].'</i>'?></td>
                     <td style="text-align: center; width:5%"><img src="../<?php echo $dados['logoFora']?>" width="35"></td>
