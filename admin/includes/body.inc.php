@@ -132,7 +132,7 @@
         <img src="../images/nba-logoman-75-word_white.svg" height="46">
 
         <a class="nav-link "  href="listaClubes.php">Clubes</a>
-        <a class="nav-link" href="listaResultados.php">Resultados</a>
+        <a class="nav-link" href="listaResultados.php">Jogo Resultados</a>
         <a class="nav-link" href="listaNoticias.php">Notícias</a>
     </nav>
 </div>

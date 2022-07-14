@@ -11,7 +11,11 @@ function drawTop($menu=HOME){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Nóticias</title>
+     <?php if($menu==HOME) echo "<title> página Principal </title>" ?>
+     <?php if($menu==JOGOS) echo "<title>Jogos </title>" ?>
+     <?php if($menu==NOTICIAS) echo "<title> Nóticias </title>" ?>
+     <?php if($menu==ARTIGOS) echo "<title>Artigos </title>" ?>
+
     <link rel = "icon" type = "image/svg" href = "images/nba_75_anniv_ball.svg">
 
     <!-- Css Files -->
@@ -71,13 +75,13 @@ function drawTop($menu=HOME){
                                         <li<?php if($menu==HOME) echo " class=\"active\""?>><a href="index.php">Página principal</a>
                                         </li>
 
-                                        <li class="sportsmagazine-megamenu-li"><a href="jogos.php">jogos</a>
+                                        <li<?php if($menu==JOGOS) echo " class=\"active\""?> class="sportsmagazine-megamenu-li"><a href="jogos.php">JOGOS</a>
                                         </li>
 
                                         <li<?php if($menu==NOTICIAS) echo " class=\"active\""?>><a href="noticias.php"> NOTÍCIAS </a>
                                         </li>
 
-                                        <li><a href="artigos.php">Artigos NBA</a>
+                                        <li<?php if($menu==ARTIGOS) echo " class=\"active\""?>><a href="artigosNba.php">Artigos NBA</a>
                                         </li>
 
                                     </ul>

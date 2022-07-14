@@ -1,9 +1,22 @@
+
 <?php
 include_once("includes/body.inc.php");
 drawTop(HOME);
 
 ?>
-<!--// MainSection \\-->
+
+  <body>
+
+    <!--// Main Wrapper \\-->
+    <div class="sportsmagazine-main-wrapper">
+
+        <!--// Header \\-->
+        <header id="sportsmagazine-header" class="sportsmagazine-header-one">
+
+
+            <!--// MainSection \\-->
+
+            <!--// MainSection \\-->
 
         </header>
         <!--// Header \\-->
@@ -14,7 +27,7 @@ drawTop(HOME);
             <!--// Slider \\-->
             <div class="sportsmagazine-banner-one">
                 <div class="sportsmagazine-banner-one-layer">
-                    <img src="Página%20principal%20img/jimmy-butler.png" alt="">
+                    <img src="Página%20principal%20img/curry-banner.jpg" alt="">
                     <span class="sportsmagazine-banner-pattren"></span>
                     <div class="sportsmagazine-banner-caption">
                         <div class="container">
@@ -134,24 +147,7 @@ drawTop(HOME);
 
                             <!--// Fancy Title \\--> <div class="sportsmagazine-fancy-title"><h2> Notícias</h2></div> <!--// Fancy Title \\-->
                             <!--// Featured Slider \\-->
-                            <div class="sportsmagazine-featured-slider">
-                                <div class="sportsmagazine-featured-slider-layer">
-                                    <img src="Página%20principal%20img/curry_mvp_finals.jpg" alt="">
-                                    <span class="sportsmagazine-black-transparent"></span>
-                                    <div class="sportsmagazine-featured-caption">
-                                        <h2>primeiro mvp das finais para curry</h2>
-                                        <span class="sportsmagazine-color" ></span>
-                                    </div>
-                                </div>
-                                <div class="sportsmagazine-featured-slider-layer">
-                                    <img src="Página%20principal%20img/Golden-State-Warriors-Champions.jpg" alt="">
-                                    <span class="sportsmagazine-black-transparent"></span>
-                                    <div class="sportsmagazine-featured-caption">
-                                        <h2>Os golden state warriors campeões nba 2022 </h2>
-                                        <span class="sportsmagazine-color"> </span>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="sportsmagazine-blog sportsmagazine-bloglarge">
                                 <ul class="row">
                                     <li class="col-md-12">
@@ -483,11 +479,38 @@ drawTop(HOME);
                     </div>
                 </div>
             </div>
-            <!--// Main Section \\-->
+
 
         </div>
-        <!--// Main Content \\-->
 
+
+
+
+        <div class="clearfix"></div>
+    </div>
+    <!--// Main Wrapper \\-->
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for JavaScript plugins) -->
+    <script type="text/javascript" src="script/jquery.js"></script>
+    <script type="text/javascript" src="script/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script/slick.slider.min.js"></script>
+    <script type="text/javascript" src="script/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="script/fancybox.pack.js"></script>
+    <script type="text/javascript" src="script/isotope.min.js"></script>
+    <script type="text/javascript" src="script/progressbar.js"></script>
+    <script type="text/javascript" src="script/counter.js"></script>
+    <script type="text/javascript" src="script/functions.js"></script>
+
+  </body>
+
+</html>
 <?php
-    drawBottom();
+drawBottom();
 ?>

@@ -37,6 +37,7 @@ $dados=mysqli_fetch_array($res);
 
 
 </div>
+
 <?php
 bottom();
 ?>

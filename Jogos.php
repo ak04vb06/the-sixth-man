@@ -2,13 +2,23 @@
 include_once("includes/body.inc.php");
 drawTop(JOGOS);
 global $con;
-$sql="select * from jogos ";
+$sql="Select jogos.*
+            , casa.clubeNome as nomeCasa
+            , casa.clubeSobrenome as sobrenomeCasa
+            , casa.clubeLogoURL as logoCasa
+            , fora.clubeNome as nomeFora
+            , fora.clubeSobrenome as sobrenomeFora
+            , fora.clubeLogoURL as logoFora
+            from jogos 
+            inner join clubes as casa on casa.clubeId=jogoCasaClubeId
+            inner join clubes as fora on fora.clubeId=jogoForaClubeId
+            order by jogoData asc";
 $res=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($res);
 
 ?>
   <body>
-  <!--// MainSection \\-->
+
 
         </header>
         <!--// Header \\-->
@@ -47,18 +57,17 @@ $dados=mysqli_fetch_array($res);
                                                 while($dados=mysqli_fetch_array($res)){
                                                 ?>
                                                 <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/dallaslogo.svg" alt=""></figure>
+                                                    <figure><img src="<?php echo $dados['logoCasa']?>" alt=""></figure>
                                                     <div class="sportsmagazine-first-team-info">
-                                                        <h6><a>Dallas</a></h6>
-                                                        <span><b>Mavericks</b></span>
+                                                        <h6><a><?php echo $dados['nomeCasa']?></a></h6>
+                                                        <span><b>11</b></span>
                                                     </div>
                                                 </div>
                                                 <div class="sportsmagazine-match-view">
-                                                    <h5>30 Março 2022</h5>
-                                                    <span>120 - 117 </span>
-                                                    <?php
-                                                        }
-                                                    ?>
+
+                                                    <span><?php echo $dados['jogoData']?> </span>
+
+
                                                 </div>
                                                 <div class="sportsmagazine-second-team">
                                                     <figure><img src="extra-images/clevelandlogo.svg" alt=""></figure>
@@ -102,258 +111,14 @@ $dados=mysqli_fetch_array($res);
 
                                         </div>
                                     </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img3.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 2</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img4.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket" style="text-align: center">
-                                                    <table class="table" >
+                                    <?php
+                                    }
+                                    ?>
 
-                                                        <tr>
-                                                            <th style="width: 60%">&nbsp;</th>
-                                                            <th style="width: 10%">1Q</th>
-                                                            <th style="width: 10%">2Q</th>
-                                                            <th style="width: 10%">3Q</th>
-                                                            <th style="width: 10%">4Q</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Yorkshire</td>
-                                                            <td>10</td>
-                                                            <td>10</td>
-                                                            <td>10</td>
-                                                            <td>10</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Sharks</td>
-                                                            <td>10</td>
-                                                            <td>10</td>
-                                                            <td>10</td>
-                                                            <td>10</td>
-                                                        </tr>
-
-                                                    </table>
-
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img2.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 3</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img3.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket">
-                                                <div class="sportsmagazine-buy-ticket-text">
-                                                    <h5>Country Durham, UK</h5>
-                                                    <time datetime="2008-02-14 20:00">August 21st, 2017 <span>@ 9:00 PM</span></time>
-                                                </div>
-                                                <a href="404.html" class="ticket-buy-btn">Buy Ticket</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img4.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 4</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img1.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket">
-                                                <div class="sportsmagazine-buy-ticket-text">
-                                                    <h5>Country Durham, UK</h5>
-                                                    <time datetime="2008-02-14 20:00">August 21st, 2017 <span>@ 9:00 PM</span></time>
-                                                </div>
-                                                <a href="404.html" class="ticket-buy-btn">Buy Ticket</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img3.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 5</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img2.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket">
-                                                <div class="sportsmagazine-buy-ticket-text">
-                                                    <h5>Country Durham, UK</h5>
-                                                    <time datetime="2008-02-14 20:00">August 21st, 2017 <span>@ 9:00 PM</span></time>
-                                                </div>
-                                                <a href="404.html" class="ticket-buy-btn">Buy Ticket</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img4.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 6</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img3.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket">
-                                                <div class="sportsmagazine-buy-ticket-text">
-                                                    <h5>Country Durham, UK</h5>
-                                                    <time datetime="2008-02-14 20:00">August 21st, 2017 <span>@ 9:00 PM</span></time>
-                                                </div>
-                                                <a href="404.html" class="ticket-buy-btn">Buy Ticket</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img1.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 7</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img2.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket">
-                                                <div class="sportsmagazine-buy-ticket-text">
-                                                    <h5>Country Durham, UK</h5>
-                                                    <time datetime="2008-02-14 20:00">August 21st, 2017 <span>@ 9:00 PM</span></time>
-                                                </div>
-                                                <a href="404.html" class="ticket-buy-btn">Buy Ticket</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="col-md-12">
-                                        <div class="sportsmagazine-fixture-wrap">
-                                            <div class="sportsmagazine-teams-match">
-                                                <div class="sportsmagazine-first-team">
-                                                    <figure><img src="extra-images/team-match-img2.png" alt=""></figure>
-                                                    <div class="sportsmagazine-first-team-info">
-                                                        <h6><a href="404.html">Yorkshire</a></h6>
-                                                        <span>Bepop Institute</span>
-                                                    </div>
-                                                </div>
-                                                <div class="sportsmagazine-match-view">
-                                                    <h5>Pool Match # 8</h5>
-                                                    <span>VS</span>
-                                                </div>
-                                                <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/team-match-img1.png" alt=""></figure>
-                                                    <div class="sportsmagazine-second-team-info">
-                                                        <h6><a href="404.html">Sharks Club</a></h6>
-                                                        <span>Marine College</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="sportsmagazine-buy-ticket">
-                                                <div class="sportsmagazine-buy-ticket-text">
-                                                    <h5>Country Durham, UK</h5>
-                                                    <time datetime="2008-02-14 20:00">August 21st, 2017 <span>@ 9:00 PM</span></time>
-                                                </div>
-                                                <a href="404.html" class="ticket-buy-btn">Buy Ticket</a>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                             <!--// Pagination \\-->
-                            <div class="sportsmagazine-pagination">
-                              <ul class="page-numbers">
-                                 <li><a class="previous page-numbers" href="404.html"><span aria-label="Next"><i class="fa fa-angle-left"></i></span></a></li>
-                                 <li><span class="page-numbers current">1</span></li>
-                                 <li><a class="page-numbers" href="404.html">2</a></li>
-                                 <li><a class="page-numbers" href="404.html">3</a></li>
-                                 <li><a class="page-numbers" href="404.html">4</a></li>
-                                 <li><a class="next page-numbers" href="404.html"><span aria-label="Next"><i class="fa fa-angle-right"></i></span></a></li>
-                              </ul>
-                            </div>
+
                             <!--// Pagination \\-->
                         </div>
 
