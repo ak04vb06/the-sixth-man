@@ -1,6 +1,8 @@
 <?php
     include("admin/includes/config.inc.php");
     $con=mysqli_connect(HOST,USER,PWD,DATABASE);
+    setlocale(LC_TIME, 'pt_PT', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                                    date_default_timezone_set('Europe/Lisbon');
 function drawTop($menu=HOME){
         ?>
 <!DOCTYPE html>

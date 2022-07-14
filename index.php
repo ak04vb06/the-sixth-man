@@ -2,23 +2,16 @@
 <?php
 include_once("includes/body.inc.php");
 drawTop(HOME);
-
+global $con;
 ?>
 
-  <body>
+  <body style="background: white">
 
     <!--// Main Wrapper \\-->
     <div class="sportsmagazine-main-wrapper">
 
         <!--// Header \\-->
-        <header id="sportsmagazine-header" class="sportsmagazine-header-one">
 
-
-            <!--// MainSection \\-->
-
-            <!--// MainSection \\-->
-
-        </header>
         <!--// Header \\-->
 
 		<!--// Main Banner \\-->
@@ -26,28 +19,6 @@ drawTop(HOME);
 
             <!--// Slider \\-->
             <div class="sportsmagazine-banner-one">
-                <div class="sportsmagazine-banner-one-layer">
-                    <img src="Página%20principal%20img/curry-banner.jpg" alt="">
-                    <span class="sportsmagazine-banner-pattren"></span>
-                    <div class="sportsmagazine-banner-caption">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="sportsmagazine-banner-wrap">
-                                        <h1><span>See and find everything </span> <strong class="sportsmagazine-color"> About the Nba </strong>  <span> </span>     </h1>
-                                        <p> </p>
-
-                                    </div>
-                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
-                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
 
                 <div class="sportsmagazine-banner-one-layer">
                    <img src="Página%20principal%20img/jalen-green.png" alt="">
@@ -85,58 +56,37 @@ drawTop(HOME);
                         <!--// Fixture Slider \\-->
 						<div class="col-md-12">
                             <div class="sportsmagazine-fixture-slider">
+                                <?php
+                                    $sql="Select jogos.*
+                                    , casa.clubeNome as nomeCasa
+                                    , casa.clubeSobrenome as sobrenomeCasa
+                                    , casa.clubeLogoURL as logoCasa
+                                    , fora.clubeNome as nomeFora
+                                    , fora.clubeSobrenome as sobrenomeFora
+                                    , fora.clubeLogoURL as logoFora
+                                    from jogos 
+                                    inner join clubes as casa on casa.clubeId=jogoCasaClubeId
+                                    inner join clubes as fora on fora.clubeId=jogoForaClubeId
+                                    order by jogoData desc";
+                                    $res=mysqli_query($con,$sql);
+                                    while($dados=mysqli_fetch_array($res)){
 
-                                <div class="sportsmagazine-fixture-slider-layer">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
-                                    <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">76ers<span>125</span></li>
-                                        <li>Knicks<span>109</span></li>
-                                    </ul>
-                                </div>
-                                <div class="sportsmagazine-fixture-slider-layer">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
-                                    <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">Jazz <span>118</span></li>
-                                        <li>sun <span>114</span></li>
-                                    </ul>
-                                </div>
-                                <div class="sportsmagazine-fixture-slider-layer">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
-                                    <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">CIT <span>03</span></li>
-                                        <li>KIN <span>03</span></li>
-                                    </ul>
-                                </div>
-                                <div class="sportsmagazine-fixture-slider-layer">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
-                                    <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">Boston<span>107</span></li>
-                                        <li>Pacers <span>128</span></li>
-                                    </ul>
-                                </div>
-                                <div class="sportsmagazine-fixture-slider-layer sportsmagazine-fixture-booked">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
-                                    <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">Pistons<span>127</span></li>
-                                        <li>Hornets <span>126</span></li>
 
-                                    </ul>
-                                </div>
+                                ?>
                                 <div class="sportsmagazine-fixture-slider-layer">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
+                                    <time datetime="2008-02-14 20:00"><?php echo strftime(' %d de %B de %Y', strtotime($dados['jogoData']));?></time>
                                     <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">Clippers <span>99</span></li>
-                                        <li>Rockets <span>98</span></li>
+                                        <li class="first-child"><?php echo $dados['sobrenomeCasa']?><span><?php echo $dados['jogoResultadoCasa']?></span></li>
+                                        <li><?php echo $dados['sobrenomeFora']?><span><?php echo $dados['jogoResultadoFora']?></span></li>
                                     </ul>
                                 </div>
-                                <div class="sportsmagazine-fixture-slider-layer sportsmagazine-fixture-booked">
-                                    <time datetime="2008-02-14 20:00">27 Fevereiro, 2022</time>
-                                    <ul class="sportsmagazine-bgcolor">
-                                        <li class="first-child">Mavericks<span>107</span></li>
-                                        <li>Warriors <span>101</span></li>
+                                <?php
+                                }
+                                ?>
 
-                                    </ul>
-                                </div>
+
+
+
 
                             </div>
                         </div>

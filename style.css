@@ -252,6 +252,7 @@ address { font-style: italic; }
 	float: left;
 	width: 100%;
 	position: relative;
+    background-color: whitesmoke;
 }
 .sportsmagazine-main-content 	{ padding: 50px 0px 10px 0px; }
 .sportsmagazine-right-section 	{ float: right; }

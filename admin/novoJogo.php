@@ -19,11 +19,11 @@ top();
             <select class="form-select" name="clubeCasaId">
                 <option selected>Escolha o clube...</option>
                 <?php
-                $sql="select * from clubes";
+                $sql="select * from clubes order by clubeNome ";
                 $res=mysqli_query($con,$sql);
                 while($dados=mysqli_fetch_array($res)){
                 ?>
-                    <option value="<?php echo $dados['clubeId'] ?>"><?php echo $dados['clubeNome'] ?></option>
+                    <option value="<?php echo $dados['clubeId'] ?>"><?php echo $dados['clubeNome']." ".$dados['clubeSobrenome']  ?></option>
                <?php
                 }
                 ?>
@@ -36,11 +36,11 @@ top();
             <select class="form-select" name="clubeForaId">
                 <option selected>Escolha o clube...</option>
                 <?php
-                $sql="select * from clubes";
+                $sql="select * from clubes order by clubeNome ";
                 $res=mysqli_query($con,$sql);
                 while($dados=mysqli_fetch_array($res)){
                 ?>
-                    <option value="<?php echo $dados['clubeId'] ?>"><?php echo $dados['clubeNome'] ?></option>
+                    <option value="<?php echo $dados['clubeId'] ?>"><?php echo $dados['clubeNome']." ".$dados['clubeSobrenome'] ?></option>
                <?php
                 }
                 ?>

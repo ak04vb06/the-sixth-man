@@ -12,10 +12,8 @@ $sql="Select jogos.*
             from jogos 
             inner join clubes as casa on casa.clubeId=jogoCasaClubeId
             inner join clubes as fora on fora.clubeId=jogoForaClubeId
-            order by jogoData asc";
+            order by jogoData desc";
 $res=mysqli_query($con,$sql);
-$dados=mysqli_fetch_array($res);
-
 ?>
   <body>
 
@@ -50,36 +48,48 @@ $dados=mysqli_fetch_array($res);
 						<div class="col-md-12">
                             <div class="sportsmagazine-fixture sportsmagazine-fixture-list">
                                 <ul class="row">
+
+                                    <?php
+                                    while($dados=mysqli_fetch_array($res)){
+                                    ?>
+
                                     <li class="col-md-12">
                                         <div class="sportsmagazine-fixture-wrap">
                                             <div class="sportsmagazine-teams-match">
-                                                <?php
-                                                while($dados=mysqli_fetch_array($res)){
-                                                ?>
                                                 <div class="sportsmagazine-first-team">
                                                     <figure><img src="<?php echo $dados['logoCasa']?>" alt=""></figure>
                                                     <div class="sportsmagazine-first-team-info">
-                                                        <h6><a><?php echo $dados['nomeCasa']?></a></h6>
-                                                        <span><b>11</b></span>
+                                                       <h6><a><?php echo $dados['nomeCasa']?></a></h6>
+                                                        <span><b><?php echo $dados['sobrenomeCasa']?></b></span>
                                                     </div>
                                                 </div>
                                                 <div class="sportsmagazine-match-view">
-
-                                                    <span><?php echo $dados['jogoData']?> </span>
-
-
+                                                    <h5><?php echo $dados['jogoData']?></h5>
+                                                    <span><?php echo $dados['jogoResultadoCasa']." - ".$dados['jogoResultadoFora']?></span>
                                                 </div>
                                                 <div class="sportsmagazine-second-team">
-                                                    <figure><img src="extra-images/clevelandlogo.svg" alt=""></figure>
+                                                    <figure><img src="<?php echo $dados['logoFora']?>" alt=""></figure>
                                                     <div class="sportsmagazine-second-team-info">
-                                                        <h6><a>Cleveland</a></h6>
-                                                        <span><b>Cavaliers</b></span>
+                                                        <h6><a><?php echo $dados['nomeFora']?></a></h6>
+                                                        <span><b><?php echo $dados['sobrenomeFora']?></b></span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="sportsmagazine-buy-ticket" style="text-align: center">
                                                 <table class="table" >
+                                                    <?php
+                                                    $sql="select * from parciais where parcialJogoId=".$dados['jogoId'];
+                                                    $resP=mysqli_query($con,$sql);
+                                                    $par=array();
+                                                    $i=1;
+                                                    while ($dadosP=mysqli_fetch_array($resP)){
 
+                                                        $par[$i]['casa']=$dadosP['parcialCasaPontos'];
+                                                        $par[$i]['fora']=$dadosP['parcialForaPontos'];
+                                                        $i++;
+                                                    }
+
+                                                    ?>
                                                     <tr>
                                                         <th style="width: 60%">&nbsp;</th>
                                                         <th style="width: 10%">1Q</th>
@@ -88,18 +98,18 @@ $dados=mysqli_fetch_array($res);
                                                         <th style="width: 10%">4Q</th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Yorkshire</td>
-                                                        <td>10</td>
-                                                        <td>10</td>
-                                                        <td>10</td>
-                                                        <td>10</td>
+                                                        <td><?php echo $dados['sobrenomeCasa']?></td>
+                                                        <td><?php echo $par[1]['casa']?></td>
+                                                        <td><?php echo $par[2]['casa']?></td>
+                                                        <td><?php echo $par[3]['casa']?></td>
+                                                        <td><?php echo $par[4]['casa']?></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Sharks</td>
-                                                        <td>10</td>
-                                                        <td>10</td>
-                                                        <td>10</td>
-                                                        <td>10</td>
+                                                        <td><?php echo $dados['sobrenomeFora']?></td>
+                                                        <td><?php echo $par[1]['fora']?></td>
+                                                        <td><?php echo $par[2]['fora']?></td>
+                                                        <td><?php echo $par[3]['fora']?></td>
+                                                        <td><?php echo $par[4]['fora']?></td>
                                                     </tr>
 
                                                 </table>
@@ -111,6 +121,7 @@ $dados=mysqli_fetch_array($res);
 
                                         </div>
                                     </li>
+
                                     <?php
                                     }
                                     ?>
