@@ -100,7 +100,7 @@
                     <div class="row">
                         <!--// Widget Contact Info \\-->
                         <aside class="col-md-4 widget widget_contact_info">
-                            <a href="index.html" class="footer-logo"><img src="images/nba-logoman-75-word_white.svg" alt=""></a>
+                            <a href="index.html" class="footer-logo"><img src="images/nba-logoman-75-word_white.svg " alt=""></a>
 
                             <ul class="sportsmagazine-social-network">
 

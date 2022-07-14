@@ -1,80 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Jogos</title>
-    <link rel = "icon" type = "image/svg" href = "images/nba_75_anniv_ball.svg">
+<?php
+include_once("includes/body.inc.php");
+drawTop(JOGOS);
+global $con;
+$sql="select * from jogos ";
+$res=mysqli_query($con,$sql);
+$dados=mysqli_fetch_array($res);
 
-    <!-- Css Files -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/flaticon.css" rel="stylesheet">
-    <link href="css/slick-slider.css" rel="stylesheet">
-    <link href="css/fancybox.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <link href="css/color.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+?>
   <body>
-	
-    <!--// Main Wrapper \\-->
-    <div class="sportsmagazine-main-wrapper">
-
-        <!--// Header \\-->
-        <header id="sportsmagazine-header" class="sportsmagazine-header-one">
-
-
-            <!--// MainSection \\-->
-            <div class="sportsmagazine-main-header">
-                <div class="container">
-                    <div class="row">
-                        <aside class="col-md-2"><a href="index.html" class="sportsmagazine-logo"><img src="images/nba-logoman-75-word_white.svg" alt="" height="100" width="400"></a></aside>
-                        <div class="col-md-10">
-                            <div class="sportsmagazine-right-section">
-                                <nav class="navbar navbar-default">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
-                                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                                        <ul class="nav navbar-nav">
-                                            <li class="sportsmagazine-megamenu-li"><a href=index.html>Página principal</a>
-                                            </li>
-                                            <li class="active"><a href="Jogos.html">Jogos</a>
-                                            </li>
-
-                                            <li><a href="noticias.html">NOTÍCIAS</a>
-                                            </li>
-
-                                            <li><a href="artigos%20nba.html">Artigos NBA</a>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </nav>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--// MainSection \\-->
+  <!--// MainSection \\-->
 
         </header>
         <!--// Header \\-->
@@ -109,6 +43,9 @@
                                     <li class="col-md-12">
                                         <div class="sportsmagazine-fixture-wrap">
                                             <div class="sportsmagazine-teams-match">
+                                                <?php
+                                                while($dados=mysqli_fetch_array($res)){
+                                                ?>
                                                 <div class="sportsmagazine-first-team">
                                                     <figure><img src="extra-images/dallaslogo.svg" alt=""></figure>
                                                     <div class="sportsmagazine-first-team-info">
@@ -119,6 +56,9 @@
                                                 <div class="sportsmagazine-match-view">
                                                     <h5>30 Março 2022</h5>
                                                     <span>120 - 117 </span>
+                                                    <?php
+                                                        }
+                                                    ?>
                                                 </div>
                                                 <div class="sportsmagazine-second-team">
                                                     <figure><img src="extra-images/clevelandlogo.svg" alt=""></figure>
