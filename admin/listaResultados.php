@@ -2,6 +2,8 @@
     include_once ("includes/body.inc.php");
     top();
     global $con;
+    $dataIni="";
+    $dataFim="";
     $sql="Select jogos.*
             , casa.clubeNome as nomeCasa
             , casa.clubeSobrenome as sobrenomeCasa
@@ -11,17 +13,39 @@
             , fora.clubeLogoURL as logoFora
             from jogos 
             inner join clubes as casa on casa.clubeId=jogoCasaClubeId
-            inner join clubes as fora on fora.clubeId=jogoForaClubeId
-            order by jogoData asc";
+            inner join clubes as fora on fora.clubeId=jogoForaClubeId";
+            if(isset($_POST['dataIni'])&&isset($_POST['dataFim'])){
+                $sql.=" where jogoData between '".$_POST['dataIni']."' and '".$_POST['dataFim']."'";
+                $dataIni=$_POST['dataIni'];
+                $dataFim=$_POST['dataFim'];
+            }
+
+
+
+            $sql.=" order by jogoData desc";
     $res=mysqli_query($con,$sql);
 ?>
     <div class="container">
         <table class="table table-striped">
+            <form action="" method="post">
             <tr>
-                <td colspan="9" style="text-align: right">
+                <td align="right">
+                    <strong>Filtro: </strong>
+                </td>
+                <td colspan="2">
+                    Data início  <input type="date" name="dataIni" value="<?php echo $dataIni;?>">
+                </td>
+                <td colspan="2">
+                    Data Fim  <input type="date" name="dataFim" value="<?php echo $dataFim;?>">
+                </td>
+                <td>
+                    <input type="submit" value="Aplicar">
+                </td>
+                <td colspan="3" style="text-align: right">
                     <a class="btn-sm btn-success" href="novoJogo.php">Novo jogo</a>
                 </td>
             </tr>
+            </form>
             <tr>
                 <th style="width: 10%">Data</th>
                 <th colspan="2" style="width: 20%">Equipa casa</th>

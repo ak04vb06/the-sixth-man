@@ -67,7 +67,7 @@ global $con;
                                     from jogos 
                                     inner join clubes as casa on casa.clubeId=jogoCasaClubeId
                                     inner join clubes as fora on fora.clubeId=jogoForaClubeId
-                                    order by jogoData desc";
+                                    order by jogoData desc limit 10 ";
                                     $res=mysqli_query($con,$sql);
                                     while($dados=mysqli_fetch_array($res)){
 
@@ -100,37 +100,28 @@ global $con;
 
                             <div class="sportsmagazine-blog sportsmagazine-bloglarge">
                                 <ul class="row">
+                                    <?php
+                                    $sql="select * from noticias order by noticiaData desc";
+                                    $res=mysqli_query($con,$sql);
+                                    while($dados=mysqli_fetch_array($res)){
+
+                                    ?>
+
+
                                     <li class="col-md-12">
-                                        <figure><a href="noticias.html"><img src="Página%20principal%20img/jay-bros%20lost.jpg" alt=""></a></figure>
+                                        <figure><a href="noticias.html"><img src="<?php echo $dados['noticiaImagemURL']?>" alt=""></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
                                             <time datetime="2022-06-17 20:00">sexta-feira 17 junho 2022</time>
                                             <h3><a href="noticias.html">Os jay brothers vs os splash brothers </a></h3>
                                             <p>As primeiras finais da equipa jovem dos boston celtics foi boa .Cada jogadore dos celtics jogou no máximo para chegar nas finais e ganhar 2 jogos contra os Warriors, infelizemente perderam, jayson tatum fez uma campanha de playoff 2022 incrível menos nas finais onde a defesa dos warrios sufocou a dos celtics  mas mesmo assim notavelmente jaylen brown, marcus smart,grant williams e robert williams III para citar apenas alguns fizeram uma grande prestação .  .</p>
-                                            <a href=nóticias.html" class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
+                                            <a href=noticia.php?id=<?php echo $dados['noticiaId']?> class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
 
                                         </div>
                                     </li>
-                                    <li class="col-md-12">
-                                        <figure><a href="noticias.html"><img src="Página%20principal%20img/Paolo-Banchero.jpg" alt=""></a></figure>
-                                        <div class="sportsmagazine-bloglarge-text">
-                                            <time datetime="2008-02-14 20:00">quinta-feira 23, 2022</time>
-                                            <h3><a href="noticias.html">Paolo Banchero foi a primeira escolha dos Orlando Magic</a></h3>
-                                            <p>numa gala que se realizou no Barclays Center, em Brooklyn, nos Estados Unidos, onde esteve presente Kylian Mbappé, jovem jogador-promessa de futebol, ‘militante’ do PSG. Assim, Banchero juntar-se-á a prometedores nomes como Jalen Suggs, Cole Anthony, Franz Wagner, Jonathan Isaac e Wendell Carter Jr.</p>
-                                            <a href=nóticias.html" class="sportsmagazine-readmore-btn">READ MORE <i class="fa fa-arrow-circle-o-right"></i></a>
+                                    <?php
 
-                                        </div>
-                                    </li>
-
-                                    <li class="col-md-12">
-                                        <figure><a href="noticias.html"><img src="Página%20principal%20img/kyrie%20and%20kd%20trade.jpg" alt=""></i></a></figure>
-                                        <div class="sportsmagazine-bloglarge-text">
-                                            <time datetime="2008-02-14 20:00">segunda-feira 27, 2022</time>
-                                            <h3><a href="noticias.html">Kyrie Irving decidiu ficar no Brooklyn Nets e Kevin Durant pede para sair dos Brooklyn Nets</a></h3>
-                                            <p>Irving exerceu a sua player option com os Nets e vai permanecer no time na temporada 2022-23. De acordo com o jornalista Shams Charania, do The Athletic, ele vai receber 37 milhões de dólares.De acordo com informações avançadas por Adrian Wojnarowski, da ESPN, e Shams Charania, do The Athletic, os dois principais insiders da NBA, o internacional norte-americano fez o pedido diretamente a Joe Tsai, dono da equipa.as duas formações que se encontram no topo das preferências de Durant são os Phoenix Suns e os Miami Heat. Contudo, KD tem mais quatro anos de contrato, está no pico do seu valor e a equipa que decidir fazer a troca pelo jogador sabe que terá controlo contratual.</p>
-                                            <a href="noticias.html" class="sportsmagazine-readmore-btn">READ MORE <i class="fa fa-arrow-circle-o-right"></i></a>
-
-                                        </div>
-                                    </li>
+                                    }
+                                    ?>
 
                                 </ul>
                             </div>
@@ -158,194 +149,137 @@ global $con;
                                         <li>WIN%</li>
                                     </ul>
                                 </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>1</li>
-                                        <li> <img src="extra-images/miamilogo.svg" alt=""> <div class="ranking-logo"><span>Miami</span> <small>Heat</small> </div> </li>
-                                        <li>53</li>
-                                        <li>29</li>
-                                        <li>.646</li>
-                                    </ul>
-                                </div>
+                                <?php
+                                $sql="select clubeId
+                                        , clubeNome
+                                        , clubeSobrenome
+                                        , clubeLogoURL
+                                        , ifnull(winsHome,0) as wHome
+                                        , ifnull(defeatsHome,0) as dHome
+                                        , ifnull(winsAway,0) as wAway
+                                        , ifnull(defeatsAway,0) as dAway
+                                        from clubes left join (select jogoCasaClubeId, count(*) as winsHome
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa>jogoResultadoFora
+                                                                                        group by 1)as tabelaW1 on clubeId=tabelaW1.jogoCasaClubeId
+                                                                left join (select jogoCasaClubeId, count(*) as defeatsHome
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa<jogoResultadoFora
+                                                                                        group by 1)as tabelaD1 on clubeId=tabelaD1.jogoCasaClubeId 						left join (select jogoForaClubeId, count(*) as winsAway
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa<jogoResultadoFora
+                                                                                        group by 1)as tabelaW2 on clubeId=tabelaW2.jogoForaClubeId
+                                                                left join (select jogoForaClubeId, count(*) as defeatsAway
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa>jogoResultadoFora
+                                                                                        group by 1)as tabelaD2 on clubeId=tabelaD2.jogoForaClubeId
+                                        where clubeConferencia='east'
+                                        order by (wHome+wAway)/(wHome+wAway+dHome+dAway) desc
+                                        limit 8";
+
+                                $res=mysqli_query($con,$sql);
+                                $i=1;
+                                while($dados=mysqli_fetch_array($res)){
+                                    $totW=intval($dados['wHome'])+intval($dados['wAway']);
+                                    $totD=intval($dados['dHome'])+intval($dados['dAway']);
+                                    $score=floatval($totW/($totD+$totW))*1000;
+                                    if($score==1000)
+                                        $scoreF='1.00';
+                                    else
+                                        $scoreF='.'.sprintf("%03d", $score);
+                            ?>
+
 
                                 <div class="ranking-content-table">
                                     <ul class="ranking-content-row">
-                                        <li>2</li>
-                                        <li> <img src="extra-images/bostonlogo.svg" alt=""> <div class="ranking-logo"><span>Boston</span> <small>Celtics</small> </div> </li>
-                                        <li>51</li>
-                                        <li>31</li>
-                                        <li>.622</li>
+                                        <li><?php echo $i++?></li>
+                                        <li> <img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
+                                                <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
+                                        <li><?php echo $totW?></li>
+                                        <li><?php echo $totD?></li>
+                                        <li><?php echo $scoreF?></li>
                                     </ul>
                                 </div>
 
-
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>3</li>
-                                        <li> <img src="extra-images/milwaukeelogo.svg" alt=""> <div class="ranking-logo"><span>Milwaukee</span> <small>Bucks</small> </div> </li>
-                                        <li>51</li>
-                                        <li>31</li>
-                                        <li>.622</li>
-                                    </ul>
-                                </div>
-
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>4</li>
-                                        <li> <img src="extra-images/philadelphialogo.svg" alt=""> <div class="ranking-logo"><span>Philadelphia</span> <small>76ers</small> </div> </li>
-                                        <li>51</li>
-                                        <li>31</li>
-                                        <li>.622</li>
-                                    </ul>
-                                </div>
-
-
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>5</li>
-                                        <li> <img src="extra-images/torontologo.svg" alt=""> <div class="ranking-logo"><span>Toronto</span> <small>Raptors</small> </div> </li>
-                                        <li>48</li>
-                                        <li>34</li>
-                                        <li>.585</li>
-                                    </ul>
-                                </div>
-
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>6</li>
-                                        <li> <img src="extra-images/chicagologo.svg" alt=""> <div class="ranking-logo"><span>Chicago </span> <small>Bulls</small> </div> </li>
-                                        <li>46</li>
-                                        <li>36</li>
-                                        <li>.561</li>
-                                    </ul>
-                                </div>
-
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>7</li>
-                                        <li> <img src="extra-images/brooklynlogo.svg" alt=""> <div class="ranking-logo"><span>Brooklyn </span> <small>Nets</small> </div> </li>
-                                        <li>39</li>
-                                        <li>21</li>
-                                        <li>.537</li>
-                                    </ul>
-                                </div>
-
-                                <div class="ranking-content-table" >
-                                    <ul class="ranking-content-row">
-                                        <li>8</li>
-                                        <li> <img src="extra-images/Atlantalogo.svg" alt=""> <div class="ranking-logo"><span>Atlanta </span> <small>Hawks</small> </div> </li>
-                                        <li>39</li>
-                                        <li>21</li>
-                                        <li>.524</li>
-                                    </ul>
-                                </div>
+                                <?php
+                                }
+                                ?>
 
 
 
 
                             <!--// Widget TeamRanking 2 \\-->
 
-                            <div class="widget widget_team_ranking">
-                                <div class="sportsmagazine-fancy-title"><h2>Conferência Oeste</h2></div>
-                                <div class="ranking-title-table">
-                                    <ul class="ranking-title-row">
-                                        <li>Team Rank</li>
-                                        <li>W</li>
-                                        <li>L</li>
-                                        <li>WIN%</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>1</li>
-                                        <li> <img src="extra-images/sunslogo.svg" alt=""> <div class="ranking-logo"><span>Phoenix</span> <small>Suns</small> </div> </li>
-                                        <li>64</li>
-                                        <li>18</li>
-                                        <li>.780</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>2</li>
-                                        <li> <img src="extra-images/Warriorslogo.svg" alt=""> <div class="ranking-logo"><span>Golden state</span> <small> Warriors</small> </div> </li>
-                                        <li>4
-                                        </li>
-                                        <li>17</li>
-                                        <li>.717</li>
+                                <div class="widget widget_team_ranking">
+                                    <div class="sportsmagazine-fancy-title"><h2>Conferência Oeste</h2></div>
+                                    <div class="ranking-title-table">
+                                        <ul class="ranking-title-row">
+                                            <li>Team Rank</li>
+                                            <li>W</li>
+                                            <li>L</li>
+                                            <li>WIN%</li>
+                                        </ul>
+                                    </div>
+                                    <?php
+                                    $sql="select clubeId
+                                        , clubeNome
+                                        , clubeSobrenome
+                                        , clubeLogoURL
+                                        , ifnull(winsHome,0) as wHome
+                                        , ifnull(defeatsHome,0) as dHome
+                                        , ifnull(winsAway,0) as wAway
+                                        , ifnull(defeatsAway,0) as dAway
+                                        from clubes left join (select jogoCasaClubeId, count(*) as winsHome
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa>jogoResultadoFora
+                                                                                        group by 1)as tabelaW1 on clubeId=tabelaW1.jogoCasaClubeId
+                                                                left join (select jogoCasaClubeId, count(*) as defeatsHome
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa<jogoResultadoFora
+                                                                                        group by 1)as tabelaD1 on clubeId=tabelaD1.jogoCasaClubeId 						left join (select jogoForaClubeId, count(*) as winsAway
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa<jogoResultadoFora
+                                                                                        group by 1)as tabelaW2 on clubeId=tabelaW2.jogoForaClubeId
+                                                                left join (select jogoForaClubeId, count(*) as defeatsAway
+                                                                                        from jogos
+                                                                                        where jogoResultadoCasa>jogoResultadoFora
+                                                                                        group by 1)as tabelaD2 on clubeId=tabelaD2.jogoForaClubeId
+                                        where clubeConferencia='west'
+                                        order by (wHome+wAway)/(wHome+wAway+dHome+dAway) desc
+                                        limit 8";
+
+                                    $res=mysqli_query($con,$sql);
+                                    $i=1;
+                                    while($dados=mysqli_fetch_array($res)){
+                                        $totW=intval($dados['wHome'])+intval($dados['wAway']);
+                                        $totD=intval($dados['dHome'])+intval($dados['dAway']);
+                                        $score=floatval($totW/($totD+$totW))*1000;
+                                        if($score==1000)
+                                            $scoreF='1.00';
+                                        else
+                                            $scoreF='.'.sprintf("%03d", $score);
+                                        ?>
 
 
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>3</li>
+                                        <div class="ranking-content-table">
+                                            <ul class="ranking-content-row">
+                                                <li><?php echo $i++?></li>
+                                                <li> <img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
+                                                        <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
+                                                <li><?php echo $totW?></li>
+                                                <li><?php echo $totD?></li>
+                                                <li><?php echo $scoreF?></li>
+                                            </ul>
+                                        </div>
 
-                                        <li> <img src="extra-images/Memphislogo.svg" alt=""> <div class="ranking-logo"><span>Memphis</span> <small>Grizzlies</small> </div> </li>
-                                        <li>41</li>
-                                        <li>20</li>
-                                        <li>.672</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>4</li>
-                                        <li> <img src="extra-images/utahlogo.svg" alt=""> <div class="ranking-logo"><span>Utah</span> <small>Jazz</small> </div> </li>
-                                        <li>36</li>
-                                        <li>22</li>
-                                        <li>.621</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>5</li>
-                                        <li> <img src="extra-images/dallaslogo.svg" alt=""> <div class="ranking-logo"><span>Dallas</span> <small>Mavericks</small> </div> </li>
-                                        <li>35</li>
-                                        <li>24</li>
-                                        <li>.593</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>6</li>
-                                        <li> <img src="extra-images/denverlogo.svg" alt=""> <div class="ranking-logo"><span>Denver</span> <small>Nuggets</small> </div> </li>
-                                        <li>34</li>
-                                        <li>25</li>
-                                        <li>.576</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>7</li>
-                                        <li> <img src="extra-images/minesotalogo.svg" alt=""> <div class="ranking-logo"><span> Minnesota </span> <small>Timberwolves</small> </div> </li>
-                                        <li>32</li>
-                                        <li>28</li>
-                                        <li>.533</li>
-                                    </ul>
-                                </div>
-                                <div class="ranking-content-table">
-                                    <ul class="ranking-content-row">
-                                        <li>8</li>
-                                        <li> <img src="extra-images/laclipperslogo.svg" alt=""> <div class="ranking-logo"><span>LA</span> <small>Clippers</small> </div> </li>
-                                        <li>30</li>
-                                        <li>31</li>
-                                        <li>.492</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
+                                        <?php
+                                    }
+                                    ?>
                             <!--// Widget TeamRanking \\-->
 
                             <!--// Widget Popular News \\-->
                             <div class="widget widget_popular_news">
+                                <!--
                                 <div class="sportsmagazine-fancy-title"><h2>News</h2></div>
                                 <ul>
                                     <li>
@@ -384,10 +318,12 @@ global $con;
                                         </div>
                                     </li>
                                 </ul>
+                                -->
                             </div>
 
                             <!--// Widget Next Match \\-->
                             <div class="widget widget_next_match">
+                                <!--
                                 <div class="sportsmagazine-fancy-title"><h2 align="center">Próximo jogo</h2></div>
                                 <div class="widget_next_match_title">
                                     <h5 >Temporada atual</h5>
@@ -416,6 +352,7 @@ global $con;
                                     <div id="sportsmagazine-countdown"></div>
                                 </div>
                                 <a href="Jogos.html" class="widget_match_btn">Ver lista de jogos</a>
+                                -->
                             </div>
                             </div>
 
