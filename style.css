@@ -4525,7 +4525,7 @@ blockquote span:before {
 }
 .sportsmagazine-match-view span:after {
     content: '';
-    position: absolute;
+    position:absolute;
     right: -5px;
     top: 0px;
     width: 0;
@@ -4537,6 +4537,7 @@ blockquote span:before {
 .sportsmagazine-first-team,.sportsmagazine-second-team {
     background-color: #ededed;
     float: left;
+    /*padding: 20px 60px 45px 30px;*/
     padding: 28px 36px 29px 91px;
     position: relative;
 }
@@ -5550,7 +5551,7 @@ blockquote span:before {
     line-height: 0.8;
 }
 .sportsmagazine-team-leader-section section > span {
-    font-size: 10px;
+    font-size: 20px;
     line-height: 1;
 }
 .sportsmagazine-team-leader-section ul li > span { color: #292c31; font-weight: bold;}

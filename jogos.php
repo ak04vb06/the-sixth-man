@@ -52,26 +52,25 @@ $res=mysqli_query($con,$sql);
                                     <?php
                                     while($dados=mysqli_fetch_array($res)){
                                     ?>
-
                                     <li class="col-md-12">
                                         <div class="sportsmagazine-fixture-wrap">
                                             <div class="sportsmagazine-teams-match">
                                                 <div class="sportsmagazine-first-team">
                                                     <figure><img src="<?php echo $dados['logoCasa']?>" alt=""></figure>
                                                     <div class="sportsmagazine-first-team-info">
-                                                       <h6><a><?php echo $dados['nomeCasa']?></a></h6>
-                                                        <span><b><?php echo $dados['sobrenomeCasa']?></b></span>
+
+                                                        <span ><h><?php echo $dados['sobrenomeCasa']?></h></span>
                                                     </div>
                                                 </div>
                                                 <div class="sportsmagazine-match-view">
                                                     <h5><?php echo $dados['jogoData']?></h5>
-                                                    <span><?php echo $dados['jogoResultadoCasa']." - ".$dados['jogoResultadoFora']?></span>
+                                                    <span ><?php echo $dados['jogoResultadoCasa']." - ".$dados['jogoResultadoFora']?></span>
                                                 </div>
-                                                <div class="sportsmagazine-second-team">
+                                                <div  class="sportsmagazine-second-team">
                                                     <figure><img src="<?php echo $dados['logoFora']?>" alt=""></figure>
                                                     <div class="sportsmagazine-second-team-info">
-                                                        <h6><a><?php echo $dados['nomeFora']?></a></h6>
-                                                        <span><b><?php echo $dados['sobrenomeFora']?></b></span>
+
+                                                        <span><h><?php echo $dados['sobrenomeFora']?></h></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -91,7 +90,7 @@ $res=mysqli_query($con,$sql);
 
                                                     ?>
                                                     <tr>
-                                                        <th style="width: 60%">&nbsp;</th>
+                                                        <th style="width: 20%">&nbsp;</th>
                                                         <th style="width: 10%">1Q</th>
                                                         <th style="width: 10%">2Q</th>
                                                         <th style="width: 10%">3Q</th>
