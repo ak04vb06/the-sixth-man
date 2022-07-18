@@ -2,6 +2,8 @@
 include_once("includes/body.inc.php");
 drawTop(JOGOS);
 global $con;
+$dataInij="";
+$dataFimj="";
 $sql="Select jogos.*
             , casa.clubeNome as nomeCasa
             , casa.clubeSobrenome as sobrenomeCasa
@@ -11,34 +13,120 @@ $sql="Select jogos.*
             , fora.clubeLogoURL as logoFora
             from jogos 
             inner join clubes as casa on casa.clubeId=jogoCasaClubeId
-            inner join clubes as fora on fora.clubeId=jogoForaClubeId
-            order by jogoData desc";
+            inner join clubes as fora on fora.clubeId=jogoForaClubeId ";
+if(isset($_POST['dataInij'])&&isset($_POST['dataFimj'])){
+    $sql.=" where jogoData between '".$_POST['dataInij']."' and '".$_POST['dataFimj']."'";
+    $dataInij=$_POST['dataInij'];
+    $dataFimj=$_POST['dataFimj'];
+}
+$sql.=" order by jogoData desc";
 $res=mysqli_query($con,$sql);
 ?>
+<link rel = "icon" type = "image/svg" href = "images/nba-logoman-75-word_white.svg">
   <body>
 
 
         </header>
         <!--// Header \\-->
 
-		<!--// SubHeader \\-->
-        <div class="sportsmagazine-subheader">
-            <span class="subheader-transparent"></span>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>Jogos</h1>
-                    </div>
-                    <div class="col-md-12">
+        <div class="sportsmagazine-banner">
 
+            <!--// Slider \\-->
+            <div class="sportsmagazine-banner-one">
+
+                <div class="sportsmagazine-banner-one-layer">
+                    <img src="images/bannerJogos/Jabanner.png" alt="">
+                    <span class="sportsmagazine-banner-pattren"></span>
+                    <div class="sportsmagazine-banner-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="sportsmagazine-banner-wrap">
+                                        <h1><span>Jogos e resultados </span> Sobre <strong class="sportsmagazine-color">a NBA  </strong> <span>  </span></h1>
+                                        <p> </p>
+
+                                    </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/" alt=""> </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/" alt=""> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="sportsmagazine-banner-one-layer">
+                    <img src="images/bannerJogos/kyrieBanner2.png" alt="">
+                    <span class="sportsmagazine-banner-pattren"></span>
+                    <div class="sportsmagazine-banner-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="sportsmagazine-banner-wrap">
+                                        <h1><span>Jogos e resultados </span> sobre <strong class="sportsmagazine-color">a NBA  </strong> <span>  </span></h1>
+                                        <p> </p>
+
+                                    </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="" alt=""> </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="" alt=""> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sportsmagazine-banner-one-layer">
+                    <img src="images/bannerJogos/tatumBanner.png" alt="">
+                    <span class="sportsmagazine-banner-pattren"></span>
+                    <div class="sportsmagazine-banner-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="sportsmagazine-banner-wrap">
+                                        <h1><span>Jogos e resultados </span> sobre <strong class="sportsmagazine-color">a NBA  </strong> <span>  </span></h1>
+                                        <p> </p>
+
+                                    </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="" alt=""> </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="" alt=""> </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+
+
+
         </div>
         <!--// SubHeader \\-->
 
 		<!--// Main Content \\-->
 		<div class="sportsmagazine-main-content">
+
+            <div align="center" class="">
+                <form action="" method="post">
+                    <tr >
+                        <td align="right">
+                            <strong>Filtro: </strong>
+                        </td>
+                        <td colspan="2">
+                            Data início  <input type="date" name="dataInij" value="<?php echo $dataInij;?>">
+                        </td>
+                        <td colspan="2">
+                            Data Fim  <input type="date" name="dataFimj" value="<?php echo $dataFimj;?>">
+                        </td>
+                        <td>
+                            <input type="submit" value="Aplicar">
+                        </td>
+
+                    </tr>
+                </form>
+            </div>
+
 
 			<!--// Main Section \\-->
 			<div class="sportsmagazine-main-section sportsmagazine-fixture-listfull">
@@ -50,6 +138,8 @@ $res=mysqli_query($con,$sql);
                                 <ul class="row">
 
                                     <?php
+                                    setlocale(LC_TIME, 'pt_PT', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+                                    date_default_timezone_set('Europe/Lisbon');
                                     while($dados=mysqli_fetch_array($res)){
                                     ?>
                                     <li class="col-md-12">
@@ -63,7 +153,7 @@ $res=mysqli_query($con,$sql);
                                                     </div>
                                                 </div>
                                                 <div class="sportsmagazine-match-view">
-                                                    <h5><?php echo $dados['jogoData']?></h5>
+                                                    <time>   </time><h5><?php echo strftime(' %d de %B de %Y', strtotime($dados['jogoData'])); ?></h5>
                                                     <span ><?php echo $dados['jogoResultadoCasa']." - ".$dados['jogoResultadoFora']?></span>
                                                 </div>
                                                 <div  class="sportsmagazine-second-team">
@@ -90,7 +180,7 @@ $res=mysqli_query($con,$sql);
 
                                                     ?>
                                                     <tr>
-                                                        <th style="width: 20%">&nbsp;</th>
+                                                        <th style="width: 20%">&nbsp;
                                                         <th style="width: 10%">1Q</th>
                                                         <th style="width: 10%">2Q</th>
                                                         <th style="width: 10%">3Q</th>

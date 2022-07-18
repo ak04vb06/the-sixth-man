@@ -4066,7 +4066,7 @@ blockquote span:before {
     color: #000;
     border: none;
     padding: 9px 27px 6px 30px;
-    text-align: left;
+    text-align: center;
 }
 .sportsmagazine-client-detail tr > td {
     border: none;

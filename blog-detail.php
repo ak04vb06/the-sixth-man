@@ -2,7 +2,7 @@
     include_once("includes/body.inc.php");
     drawTop(NOTICIAS);
     global $con;
-    $sql="select * from noticias";
+    $sql="select *  from noticias  ";
     $res=mysqli_query($con,$sql);
     $dados=mysqli_fetch_array($res);
 
@@ -14,51 +14,34 @@
 
         <!--// Header \\-->
         <header id="sportsmagazine-header" class="sportsmagazine-header-one">
-            
-            <!--// TopStrip \\-->
-           <!--//  <div class="sportsmagazine-topstrip">
-                <div class="container">
 
-                </div>
-            </div>   \\-->
-            <!--// TopStrip \\-->
 
-            <!--// MainSection \\-->
 
             <!--// MainSection \\-->
 
         </header>
         <!--// Header \\-->
-
+            <br>
 		<!--// Main Content \\-->
 		<div class="sportsmagazine-main-content sportsmagazine-main-contentminus">
             
             <!--// Main Section \\-->
-            <div class="sportsmagazine-main-section sportsmagazine-thumb">
-                <span class="thumb-transparent"></span>
-                <div class="sportsmagazine-thumb-text">
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                               <img src="images/Lebron-MJ.jpg">
 
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <img align="CENTER" src="<?php echo $dados['noticiaImagemURL']?>" >
             <!--// Main Section \\-->
 
 			<!--// Main Section \\-->
 			<div class="sportsmagazine-main-section">
 				<div class="container">
 					<div class="row">
+                        <?php
+
+
+                        ?>
                         <div class="col-md-9">
                             <div class="sportsmagazine-rich-editor">
-                                <blockquote> <h2> <?php echo $dados['noticiaCorpo'] ?> </h2>
+                                <figure>      <img  src="<?php echo $dados['noticiaImagemURL'] ?> " >   </figure>
+                                <blockquote>  <?php echo $dados['noticiaCorpo'] ?>
                             </div>
 
                             </div>
@@ -164,4 +147,6 @@
     <script type="text/javascript" src="script/functions.js"></script>
 
   </body>
-
+<?php
+drawBottom();
+?>

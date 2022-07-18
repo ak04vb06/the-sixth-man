@@ -28,6 +28,12 @@
   </head>
   <body>
 
+
+
+
+
+
+
     <!--// Main Wrapper \\-->
     <div class="sportsmagazine-main-wrapper">
 
@@ -38,7 +44,7 @@
             <div class="sportsmagazine-main-header">
                 <div class="container">
                     <div class="row">
-                        <aside class="col-md-2"><a href="index.html" class="sportsmagazine-logo"><img src="images/nba-logoman-75-word_white.svg" alt="" height="100" width="400"></a></aside>
+                        <aside class="col-md-2"><a href="index.php" class="sportsmagazine-logo"><img src="images/nba-logoman-75-word_white.svg" alt="" height="100" width="400"></a></aside>
                         <div class="col-md-10">
                             <div class="sportsmagazine-right-section">
                                 <nav class="navbar navbar-default">
@@ -52,16 +58,16 @@
                                     </div>
                                     <div class="collapse navbar-collapse" id="navbar-collapse-1">
                                         <ul class="nav navbar-nav">
-                                            <li class="sportsmagazine-megamenu-li"><a href=index.html>Página principal</a>
+                                            <li class="sportsmagazine-megamenu-li"><a href=index.php>Página principal</a>
                                             </li>
 
-                                            <li><a href="Jogos.html">Jogos</a>
+                                            <li><a href="Jogos.php">Jogos</a>
                                             </li>
 
-                                            <li><a href="noticias.html">NOTÍCIAS</a>
+                                            <li><a href="noticias.php">NOTÍCIAS</a>
                                             </li>
 
-                                            <li class="active"><a href="artigos%20nba.html">artigos Nba</a>
+                                            <li class="active"><a href="artigosNba.php">artigos Nba</a>
                                             </li>
 
                                         </ul>
@@ -155,104 +161,55 @@
                                     </li>
                                     <li class="col-md-3">
                                         <figure>
-                                            <a href="https://stockx.com/under-armour-curry-flow-9-sesame-street-cookie-monster"><img src="img%20artigos/curry9Flow.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="https://www.nike.com/pt/t/camisola-nba-swingman-dri-fit-memphis-grizzlies-city-edition-nMG3d1"><img src="img%20artigos/maillot-city-memphis-grizzlies-edition-2021-2022-1.jpeg" alt=""><i class="fa fa-shopping-cart"></i></a>
                                             <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
                                         </figure>
                                         <section>
-                                            <h5><a href="https://stockx.com/under-armour-curry-flow-9-sesame-street-cookie-monster">Curry Flow 9 Sesame Street Cookie Monster</a></h5>
+                                            <h5><a href="https://www.nike.com/pt/t/camisola-nba-swingman-dri-fit-memphis-grizzlies-city-edition-nMG3d1">Memphis Grizzlies City Edition</a></h5>
+                                            <span></span>
+                                        </section>
+                                    </li>
+
+                                    <li class="col-md-3">
+                                        <figure>
+                                            <a href="https://stockx.com/adidas-don-issue-2-marvel-venom"><img src="img%20artigos/adidas-d-o-n-issue-2-venom-1.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
+                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
+                                        </figure>
+                                        <section>
+                                            <h5><a href="https://stockx.com/adidas-don-issue-2-marvel-venom">Adidas D.O.N 3 Marvel venom</a></h5>
+                                            <span></span>
+                                        </section>
+                                    </li>
+
+
+                                    <li class="col-md-3">
+                                        <figure>
+                                            <a href="https://stockx.com/nike-lebron-19-christmas"><img src="img%20artigos/NIKE_LEBRON_19_CHRISTMAS.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
+                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
+                                        </figure>
+                                        <section>
+                                            <h5><a href="https://stockx.com/nike-lebron-19-christmas">Nike LeBron 19 Christmas</a></h5>
+
                                             <span></span>
                                         </section>
                                     </li>
                                     <li class="col-md-3">
                                         <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img6.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
+                                            <a href="https://mdsport-boutique.com/products/maillot-nba-nike-swingman-city-edition-san-antonio-spurs-personnalisable-homme"><img src="img%20artigos/san%20antonio%20city%20edition.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
                                             <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
                                         </figure>
                                         <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
+                                            <h5><a href="https://mdsport-boutique.com/products/maillot-nba-nike-swingman-city-edition-san-antonio-spurs-personnalisable-homme">San Antonio Spurs city edition</a></h5>
+
                                             <span></span>
                                         </section>
                                     </li>
                                     <li class="col-md-3">
-                                        <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img7.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
-                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
-                                        </figure>
-                                        <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
-                                            <span></span>
-                                        </section>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img8.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
-                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
-                                        </figure>
-                                        <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
-                                            <span></span>
-                                        </section>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img2.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
-                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
-                                        </figure>
-                                        <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
-                                            <span></span>
-                                        </section>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img4.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
-                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
-                                        </figure>
-                                        <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
-                                            <span></span>
-                                        </section>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img5.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
-                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
-                                        </figure>
-                                        <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
-                                            <span></span>
-                                        </section>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <figure>
-                                            <a href="shop-detail.html"><img src="extra-images/shop-grid-img1.jpg" alt=""><i class="fa fa-shopping-cart"></i></a>
-                                            <div class="star-rating"><span class="star-rating-box" style="width:69%"></span></div>
-                                        </figure>
-                                        <section>
-                                            <h5><a href="shop-detail.html">Atlantic Sneaker</a></h5>
-                                            <span class="price-cart"><del>$ 30.00</del> $19.00</span>
-                                            <span></span>
-                                        </section>
-                                    </li>
+
                                 </ul>
                             </div>
                             <!--// Pagination \\-->
-                            <div class="sportsmagazine-pagination">
-                              <ul class="page-numbers">
-                                 <li><a class="previous page-numbers" href="404.html"><span aria-label="Next"><i class="fa fa-angle-left"></i></span></a></li>
-                                 <li><span class="page-numbers current">1</span></li>
-                                 <li><a class="page-numbers" href="404.html">2</a></li>
-                                 <li><a class="page-numbers" href="404.html">3</a></li>
-                                 <li><a class="page-numbers" href="404.html">4</a></li>
-                                 <li><a class="next page-numbers" href="404.html"><span aria-label="Next"><i class="fa fa-angle-right"></i></span></a></li>
-                              </ul>
-                            </div>
+
                             <!--// Pagination \\-->
                         </div>
 

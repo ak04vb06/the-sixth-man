@@ -7,4 +7,5 @@
     define("JOGOS",2);
     define("NOTICIAS",3);
     define("ARTIGOS",4);
+
 ?>

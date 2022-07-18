@@ -4,6 +4,7 @@ include_once("includes/body.inc.php");
 drawTop(HOME);
 global $con;
 ?>
+<link rel = "icon" type = "image/svg" href = "images/nba-logoman-75-word_white.svg">
 
   <body style="background: white">
 
@@ -33,12 +34,67 @@ global $con;
 
                                     </div>
                                     <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
+                                    <div class= "sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="sportsmagazine-banner-one-layer">
+                    <img src="Página%20principal%20img/curry-banner.jpg" alt="">
+                    <span class="sportsmagazine-banner-pattren"></span>
+                    <div class="sportsmagazine-banner-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="sportsmagazine-banner-wrap">
+                                        <h1><span>Encontra O melhor </span> sobre <strong class="sportsmagazine-color">a NBA  </strong> <span>  </span></h1>
+                                        <p> </p>
+
+                                    </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
                                     <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="sportsmagazine-banner-one-layer">
+                    <img src="Página%20principal%20img/LeBron-banner.png" alt="">
+                    <span class="sportsmagazine-banner-pattren"></span>
+                    <div class="sportsmagazine-banner-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="sportsmagazine-banner-wrap">
+                                        <h1><span>Encontra O melhor </span> sobre <strong class="sportsmagazine-color">a NBA  </strong> <span>  </span></h1>
+                                        <p> </p>
+
+                                    </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
+                                    <div class="sportsmagazine-banner-thumb"> <img src="Página%20principal%20img/Stephen-Curry-PNG-Transparent.png" alt=""> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
             </div>
             <!--// Slider \\-->
 
@@ -101,28 +157,25 @@ global $con;
                             <div class="sportsmagazine-blog sportsmagazine-bloglarge">
                                 <ul class="row">
                                     <?php
-                                    $sql="select * from noticias order by noticiaData desc";
+                                    $sql="select * from noticias order by noticiaData desc limit 3";
                                     $res=mysqli_query($con,$sql);
                                     while($dados=mysqli_fetch_array($res)){
-
                                     ?>
 
 
                                     <li class="col-md-12">
-                                        <figure><a href="noticias.html"><img src="<?php echo $dados['noticiaImagemURL']?>" alt=""></a></figure>
+                                        <figure><a href="noticias.php"><img src="<?php echo $dados['noticiaImagemURL']?>" alt=""></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
-                                            <time datetime="2022-06-17 20:00">sexta-feira 17 junho 2022</time>
-                                            <h3><a href="noticias.html">Os jay brothers vs os splash brothers </a></h3>
-                                            <p>As primeiras finais da equipa jovem dos boston celtics foi boa .Cada jogadore dos celtics jogou no máximo para chegar nas finais e ganhar 2 jogos contra os Warriors, infelizemente perderam, jayson tatum fez uma campanha de playoff 2022 incrível menos nas finais onde a defesa dos warrios sufocou a dos celtics  mas mesmo assim notavelmente jaylen brown, marcus smart,grant williams e robert williams III para citar apenas alguns fizeram uma grande prestação .  .</p>
-                                            <a href=noticia.php?id=<?php echo $dados['noticiaId']?> class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
+                                            <time datetime=""> <?php echo strftime('%A, %d de %B de %Y', strtotime($dados['noticiaData'])); ?>    </time>
+                                            <h3><a href="noticias.php"> <?php echo $dados['noticiaTitulo']  ?></a></h3>
+                                            <p>  </p>
+                                            <a href=noticias.php?id=<?php echo $dados['noticiaId']?> class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
 
                                         </div>
                                     </li>
                                     <?php
-
                                     }
                                     ?>
-
                                 </ul>
                             </div>
 
@@ -204,9 +257,11 @@ global $con;
                                 <?php
                                 }
                                 ?>
+                                <br>
+                                <div class="sportsmagazine-bloglarge-text">
 
-
-
+                                    <h3 align="center"><a href="fullstanding.php"> Ver mais</a></h3>
+                                    </div>
 
                             <!--// Widget TeamRanking 2 \\-->
 
@@ -275,6 +330,11 @@ global $con;
                                         <?php
                                     }
                                     ?>
+
+                                    <div class="sportsmagazine-bloglarge-text">
+
+                                        <h3 align="center"><a href="fullstanding.php"> Ver mais</a></h3>
+                                    </div>
                             <!--// Widget TeamRanking \\-->
 
                             <!--// Widget Popular News \\-->

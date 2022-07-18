@@ -3,7 +3,7 @@
 include_once ("includes/body.inc.php");
 top();
 global $con;
-$sql="Select * from noticias ";
+$sql="Select * from noticias order by noticiaData desc ";
 $res=mysqli_query($con,$sql);
 ?>
 <div class="container">
