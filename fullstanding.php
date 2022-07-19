@@ -36,23 +36,22 @@ global $con;
 			<!--// Main Section \\-->
 			<div class="sportsmagazine-main-section sportsmagazine-fullstanding-full">
 				<div class="container">
-					<div class="row">
-						
+                    <aside class="col-md-12">
 
-                        <div class="col-md-13">
-                            <div class="sportsmagazine-playoff-staning">
-                                <h4>Conferência Este</h4>
-                                <table class="sportsmagazine-client-detail">
-                                    <tr >
-                                        <th>Team Rank</th>
-                                        <th>Teams</th>
-                                        <th>Win</th>
-                                        <th>Lose</th>
-                                        <th>Win%</th>
-                                    </tr>
-
-                                    <?php
-                                    $sql="select clubeId
+                        <!--// Widget TeamRanking \\-->
+                        <div class="widget widget_team_ranking">
+                            <div class="sportsmagazine-fancy-title"><h2>Conferência Este</h2></div>
+                            <div class="ranking-title-table" style="padding: 16px 0px 15px 18px !important;">
+                                <ul class="ranking-title-row">
+                                    <li class="text-left" style="width: 20%">Rank</li>
+                                    <li style="width: 35%">Team</li>
+                                    <li style="width: 13%">W</li>
+                                    <li style="width: 13%">L</li>
+                                    <li style="width: 19%">WIN%</li>
+                                </ul>
+                            </div>
+                            <?php
+                            $sql="select clubeId
                                         , clubeNome
                                         , clubeSobrenome
                                         , clubeLogoURL
@@ -76,57 +75,57 @@ global $con;
                                                                                         where jogoResultadoCasa>jogoResultadoFora
                                                                                         group by 1)as tabelaD2 on clubeId=tabelaD2.jogoForaClubeId
                                         where clubeConferencia='east'
-                                        order by (wHome+wAway)/(wHome+wAway+dHome+dAway) desc";
+                                        order by (wHome+wAway)/(wHome+wAway+dHome+dAway) desc
+                                        ";
 
-                                    $res=mysqli_query($con,$sql);
-                                    $i=1;
-                                    while($dados=mysqli_fetch_array($res)){
-                                    $totW=intval($dados['wHome'])+intval($dados['wAway']);
-                                    $totD=intval($dados['dHome'])+intval($dados['dAway']);
-                                    $score=floatval($totW/($totD+$totW))*1000;
-                                    if($score==1000)
-                                        $scoreF='1.00';
-                                    else
-                                        $scoreF='.'.sprintf("%03d", $score);
-                                    ?>
+                            $res=mysqli_query($con,$sql);
+                            $i=1;
+                            while($dados=mysqli_fetch_array($res)){
+                                $totW=intval($dados['wHome'])+intval($dados['wAway']);
+                                $totD=intval($dados['dHome'])+intval($dados['dAway']);
+                                $score=floatval($totW/($totD+$totW))*1000;
+                                if($score==1000)
+                                    $scoreF='1.00';
+                                else
+                                    $scoreF='.'.sprintf("%03d", $score);
+                                ?>
 
-                                    <tr>
-                                        <td><?php echo $i++?></td>
-                                        <td>
-                                            <figure> <img  src="<?php echo $dados['clubeLogoURL']?>" alt=""></figure>
-                                            <div class="player-stats-text">
-                                                <h6 align="center"><?php echo $dados['clubeNome']?></h6>
-                                                <span ></span>
-                                            </div>
-                                        </td>
-                                        <td><?php echo $totW?></td>
-                                        <td><?php echo $totD?></td>
-                                        <td><?php echo $scoreF?></td>
 
-                                    </tr>
-                                        <?php
-                                    }
-                                    ?>
-                                </table>
+                                <div class="ranking-content-table">
+                                    <ul class="ranking-content-row">
+                                        <li style="width: 20%"><?php echo ($i++)?></li>
+                                        <li style="width: 35%"><img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
+                                                <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
+                                        <li style="width: 13%"><?php echo $totW?></li>
+                                        <li style="width: 13%"><?php echo $totD?></li>
+                                        <li style="width: 19%"><?php echo $scoreF?></li>
+                                    </ul>
+                                </div>
 
-                            </div>
+                                <?php
+                            }
+                            ?>
+                            <p>
+                                <br>
+                                <br>
+                                <br>
+                            </p>
 
-                        </div>
+                            <!--// Widget TeamRanking 2 \\-->
 
-                        <div class="col-md-12">
-                            <div class="sportsmagazine-playoff-staning">
-                                <h4>Conferência Oeste</h4>
-                                <table class="sportsmagazine-client-detail">
-                                    <tr>
-                                        <th>Team Rank</th>
-                                        <th>Teams</th>
-                                        <th>Win</th>
-                                        <th>Lose</th>
-                                        <th>Win%</th>
-                                    </tr>
-
-                                    <?php
-                                    $sql="select clubeId
+                            <div class="widget widget_team_ranking">
+                                <div class="sportsmagazine-fancy-title"><h2>Conferência Oeste</h2></div>
+                                <div class="ranking-title-table" style="padding: 16px 0px 15px 18px !important;">
+                                    <ul class="ranking-title-row">
+                                        <li class="text-left" style="width: 20%">Rank</li>
+                                        <li style="width: 35%">Team</li>
+                                        <li style="width: 13%">W</li>
+                                        <li style="width: 13%">L</li>
+                                        <li style="width: 19%">WIN%</li>
+                                    </ul>
+                                </div>
+                                <?php
+                                $sql="select clubeId
                                         , clubeNome
                                         , clubeSobrenome
                                         , clubeLogoURL
@@ -150,11 +149,12 @@ global $con;
                                                                                         where jogoResultadoCasa>jogoResultadoFora
                                                                                         group by 1)as tabelaD2 on clubeId=tabelaD2.jogoForaClubeId
                                         where clubeConferencia='west'
-                                        order by (wHome+wAway)/(wHome+wAway+dHome+dAway) desc ";
+                                        order by (wHome+wAway)/(wHome+wAway+dHome+dAway) desc
+                                        ";
 
-                                    $res=mysqli_query($con,$sql);
-                                    $i=1;
-                                    while($dados=mysqli_fetch_array($res)){
+                                $res=mysqli_query($con,$sql);
+                                $i=1;
+                                while($dados=mysqli_fetch_array($res)){
                                     $totW=intval($dados['wHome'])+intval($dados['wAway']);
                                     $totD=intval($dados['dHome'])+intval($dados['dAway']);
                                     $score=floatval($totW/($totD+$totW))*1000;
@@ -164,30 +164,31 @@ global $con;
                                         $scoreF='.'.sprintf("%03d", $score);
                                     ?>
 
-                                        <tr>
-                                            <td><?php echo $i++?></td>
-                                            <td>
-                                                <figure> <img  src="<?php echo $dados['clubeLogoURL']?>" alt=""></figure>
-                                                <div class="player-stats-text">
-                                                    <h6 align="center"><?php echo $dados['clubeNome']?></h6>
-                                                    <span ></span>
-                                                </div>
-                                            </td>
-                                            <td><?php echo $totW?></td>
-                                            <td><?php echo $totD?></td>
-                                            <td><?php echo $scoreF?></td>
 
-                                        </tr>
-                                        <?php
-                                    }
-                                    ?>
-                                </table>
+                                    <div class="ranking-content-table">
+                                        <ul class="ranking-content-row">
+                                            <li style="width: 20%"><?php echo ($i++)?></li>
+                                            <li style="width: 35%"><img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
+                                                    <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
+                                            <li style="width: 13%"><?php echo $totW?></li>
+                                            <li style="width: 13%"><?php echo $totD?></li>
+                                            <li style="width: 19%"><?php echo $scoreF?></li>
+                                        </ul>
+                                    </div>
+
+                                    <?php
+                                }
+                                ?>
+
+
                             </div>
 
-                        </div>
 
 
-					</div>
+
+                    </aside>
+
+
 				</div>
 			</div>
 			<!--// Main Section \\-->
