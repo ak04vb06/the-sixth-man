@@ -75,49 +75,7 @@
 		<!--// Main Content \\-->
 
 		<!--// Footer \\-->
-        <footer id="sportsmagazine-footer" class="sportsmagazine-footer-one">
 
-            <!--// Footer Widget \\-->
-            <div class="sportsmagazine-footer-widget">
-                <div class="container">
-                    <div class="row">
-                        <!--// Widget Contact Info \\-->
-                        <aside class="col-md-4 widget widget_contact_info">
-                            <a href="index.html" class="footer-logo"><img src="images/nba-logoman-75-word_white.svg " alt=""></a>
-
-                            <ul class="sportsmagazine-social-network">
-
-                                <!--  <li><a href="https://twitter.com/login" class="sportsmagazine-colorhover fa fa-twitter-square"></a>   GOAT page</li> -->
-
-                            </ul>
-                            <ul class="sportsmagazine-info-list">
-                                <li><i class="fa fa-envelope"></i> <span><a>goatbasket@gmail.com</a></span></li>
-                            </ul>
-                        </aside>
-                        <!--// Widget Contact Info \\-->
-
-                        <!--// Widget Twitter \\-->
-                        <aside class="col-md-4 widget widget_twitter">
-                            <div class="footer-widget-title"><h2>Twitter Feeds</h2></div>
-                            <ul>
-                                <li>
-                                    <i class="fa fa-twitter"></i> <span>@ESPNNBA</span>
-                                    <p> Isaiah Thomas está de volta a Nba , assina novo contrato de 10 dias com os hornets <a href="https://twitter.com/espnnba/status/1499215162695430149">@ESPNNBA</a></p>
-
-                                </li>
-                                <li>
-                                    <i class="fa fa-twitter"></i> <span>@NBATV</span>
-                                    <p>Ja Morant com recorde de pontos e incrível «buzzer-beater»  <a href="https://twitter.com/nbaportugalcom/status/1498602708806295552">@NbaTv</a></p>
-
-                                </li>
-                            </ul>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-
-
-        </footer>
         <!--// Footer \\-->
 
 	<div class="clearfix"></div>
