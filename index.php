@@ -167,9 +167,9 @@ global $con;
                                         <figure><a href="noticias.php"><img src="<?php echo $dados['noticiaImagemURL']?>" alt=""></a></figure>
                                         <div class="sportsmagazine-bloglarge-text">
                                             <time datetime=""> <?php echo strftime('%A, %d de %B de %Y', strtotime($dados['noticiaData'])); ?>    </time>
-                                            <h3><a href="noticias.php"> <?php echo $dados['noticiaTitulo']  ?></a></h3>
+                                            <h3><a href="blog-detail.php?id=<?php echo $dados['noticiaId']?>"> <?php echo $dados['noticiaTitulo']  ?></a></h3>
                                             <p>  </p>
-                                            <a href=noticias.php?id=<?php echo $dados['noticiaId']?> class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
+                                            <a href="blog-detail.php?id=<?php echo $dados['noticiaId']?>" class="sportsmagazine-readmore-btn">LER MAIS <i class="fa fa-arrow-circle-o-right"></i></a>
 
                                         </div>
                                     </li>

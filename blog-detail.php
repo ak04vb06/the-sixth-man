@@ -2,7 +2,8 @@
     include_once("includes/body.inc.php");
     drawTop(NOTICIAS);
     global $con;
-    $sql="select *  from noticias  ";
+    $id=intval($_GET['id']);
+    $sql="select *  from noticias where noticiaId=$id ";
     $res=mysqli_query($con,$sql);
     $dados=mysqli_fetch_array($res);
 
