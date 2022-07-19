@@ -7,6 +7,7 @@
     $dados=mysqli_fetch_array($res);
 
 ?>
+<link rel = "icon" type = "image/svg" href = "images/nba-logoman-75-word_white.svg">
   <body>
 	
     <!--// Main Wrapper \\-->
