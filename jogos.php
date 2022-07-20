@@ -105,7 +105,7 @@ $res=mysqli_query($con,$sql);
         <!--// SubHeader \\-->
 
 		<!--// Main Content \\-->
-		<div class="sportsmagazine-main-content">
+		<div   class="sportsmagazine-main-content">
 
             <div align="center" class="">
                 <form action="" method="post">
@@ -114,10 +114,10 @@ $res=mysqli_query($con,$sql);
                             <strong>Filtro: </strong>
                         </td>
                         <td colspan="2">
-                            Data início  <input type="date" name="dataInij" value="<?php echo $dataInij;?>">
+                            <b>Data início</b>  <input type="date" name="dataInij" value="<?php echo $dataInij;?>">
                         </td>
                         <td colspan="2">
-                            Data Fim  <input type="date" name="dataFimj" value="<?php echo $dataFimj;?>">
+                            <b>Data Fim</b>  <input type="date" name="dataFimj" value="<?php echo $dataFimj;?>">
                         </td>
                         <td>
                             <input type="submit" value="Aplicar">
@@ -149,7 +149,7 @@ $res=mysqli_query($con,$sql);
                                                     <figure><img src="<?php echo $dados['logoCasa']?>" alt=""></figure>
                                                     <div class="sportsmagazine-first-team-info">
 
-                                                        <span ><h><?php echo $dados['sobrenomeCasa']?></h></span>
+                                                        <span ><b><?php echo $dados['sobrenomeCasa']?></b></span>
                                                     </div>
                                                 </div>
                                                 <div class="sportsmagazine-match-view">
@@ -160,7 +160,7 @@ $res=mysqli_query($con,$sql);
                                                     <figure><img src="<?php echo $dados['logoFora']?>" alt=""></figure>
                                                     <div class="sportsmagazine-second-team-info">
 
-                                                        <span><h><?php echo $dados['sobrenomeFora']?></h></span>
+                                                        <span><b ><?php echo $dados['sobrenomeFora']?></b></span>
                                                     </div>
                                                 </div>
                                             </div>

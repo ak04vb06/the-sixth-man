@@ -91,18 +91,18 @@ $sql.=" order by noticiaData desc";
 
 
 </header>
-
+    <div class="sportsmagazine-main-content"></div>
     <div align="center" class="">
         <form action="" method="post">
             <tr >
                 <td align="right">
-                    <strong>Filtro: </strong>
+                    <strong>  Filtro: </strong>
                 </td>
                 <td colspan="2">
-                    Data início  <input type="date" name="dataIniN" value="<?php echo $dataIniN;?>">
+                    <b> Data início</b>  <input type="date" name="dataIniN" value="<?php echo $dataIniN;?>">
                 </td>
                 <td colspan="2">
-                    Data Fim  <input type="date" name="dataFimN" value="<?php echo $dataFimN;?>">
+                    <b>Data Fim</b>  <input type="date" name="dataFimN" value="<?php echo $dataFimN;?>">
                 </td>
                 <td>
                     <input type="submit" value="Aplicar">
@@ -138,7 +138,7 @@ $sql.=" order by noticiaData desc";
                                             <time datetime="2008-02-14 20:00"><?php echo strftime('%A, %d de %B de %Y', strtotime($dados['noticiaData'])); ?></time>
                                             <h3><a href="blog-detail.php?id=<?php echo $dados['noticiaId']?>"><?php echo $dados['noticiaTitulo']?></a></h3>
                                             <p></p>
-                                            <a  href="blog-detail.php?id=<?php echo $dados['noticiaId']?>" ><?php echo $dados['noticiaResumo']?>  </a>
+                                            <a  href="blog-detail.php?id=<?php echo $dados['noticiaId']?>" >  </a>
                                             <p></p>
                                             <a  href="blog-detail.php?id=<?php echo $dados['noticiaId']?>"> <i class="fa fa-arrow-circle-o-right"> Read More </i>
                                         </div>

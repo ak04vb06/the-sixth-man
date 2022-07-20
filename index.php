@@ -247,8 +247,8 @@ global $con;
                                     <ul class="ranking-content-row">
                                         <li><?php echo $i++?></li>
                                         <li> <img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
-                                                <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
-                                        <li><?php echo $totW?></li>
+                                                <b><?php echo $dados['clubeNome']?></b> <span><?php echo $dados['clubeSobrenome']?></span> </div> </li>
+                                        <li style="width: 13%"><b><?php echo $totW?></b></li>
                                         <li><?php echo $totD?></li>
                                         <li><?php echo $scoreF?></li>
                                     </ul>
@@ -260,7 +260,7 @@ global $con;
                                 <br>
                                 <div class="sportsmagazine-bloglarge-text">
 
-                                    <h3 align="center"><a href="fullstanding.php"> Ver mais</a></h3>
+                                    <h4 align="center"><a  href="fullstanding.php"><b><p class="dotted"> Classificação Inteiria</p> </b>  </a></h4>
                                     </div>
 
                             <!--// Widget TeamRanking 2 \\-->
@@ -320,8 +320,8 @@ global $con;
                                             <ul class="ranking-content-row">
                                                 <li><?php echo $i++?></li>
                                                 <li> <img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
-                                                        <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
-                                                <li><?php echo $totW?></li>
+                                                        <b><?php echo $dados['clubeNome']?></b> <span><?php echo $dados['clubeSobrenome']?></span> </div> </li>
+                                                <li style="width: 13%"><b><?php echo $totW?></b></li>
                                                 <li><?php echo $totD?></li>
                                                 <li><?php echo $scoreF?></li>
                                             </ul>
@@ -333,7 +333,7 @@ global $con;
 
                                     <div class="sportsmagazine-bloglarge-text">
 
-                                        <h3 align="center"><a href="fullstanding.php"> Ver mais</a></h3>
+                                        <h4 align="center"><a  href="fullstanding.php"><b><p class="dotted"> Classificação Inteiria</p> </b>  </a></h4>
                                     </div>
                             <!--// Widget TeamRanking \\-->
 

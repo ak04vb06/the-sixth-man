@@ -95,8 +95,8 @@ global $con;
                                     <ul class="ranking-content-row">
                                         <li style="width: 20%"><?php echo ($i++)?></li>
                                         <li style="width: 35%"><img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
-                                                <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
-                                        <li style="width: 13%"><?php echo $totW?></li>
+                                                <b><?php echo $dados['clubeNome']?></b> <span><?php echo $dados['clubeSobrenome']?></span> </div> </li>
+                                        <li style="width: 13%"><b><?php echo $totW?></b></li>
                                         <li style="width: 13%"><?php echo $totD?></li>
                                         <li style="width: 19%"><?php echo $scoreF?></li>
                                     </ul>
@@ -169,8 +169,8 @@ global $con;
                                         <ul class="ranking-content-row">
                                             <li style="width: 20%"><?php echo ($i++)?></li>
                                             <li style="width: 35%"><img src="<?php echo $dados['clubeLogoURL']?>" alt=""> <div class="ranking-logo">
-                                                    <span><?php echo $dados['clubeNome']?></span> <small><?php echo $dados['clubeSobrenome']?></small> </div> </li>
-                                            <li style="width: 13%"><?php echo $totW?></li>
+                                                    <b><?php echo $dados['clubeNome']?></b> <span><?php echo $dados['clubeSobrenome']?></span> </div> </li>
+                                            <li style="width: 13%"><b><?php echo $totW?></b></li>
                                             <li style="width: 13%"><?php echo $totD?></li>
                                             <li style="width: 19%"><?php echo $scoreF?></li>
                                         </ul>
