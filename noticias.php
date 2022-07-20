@@ -96,7 +96,7 @@ $sql.=" order by noticiaData desc";
         <form action="" method="post">
             <tr >
                 <td align="right">
-                    <strong>  Filtro: </strong>
+                    <strong><p class="groove" align="center">Filtro notícias : </p>  </strong>
                 </td>
                 <td colspan="2">
                     <b> Data início</b>  <input type="date" name="dataIniN" value="<?php echo $dataIniN;?>">

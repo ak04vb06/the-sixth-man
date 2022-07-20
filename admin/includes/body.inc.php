@@ -35,7 +35,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <style>
         body{
-            background-color: white ;
+
+           background-color: darkgrey;
+
+
 
         }
         .nav-pills{
@@ -124,6 +127,7 @@
     <title>Backoffice</title>
 </head>
 <body>
+
 
 <div class="container bg-dark">
     <h1 style="text-align: center; color: whitesmoke">Administração - base de dados</h1>

@@ -111,7 +111,7 @@ $res=mysqli_query($con,$sql);
                 <form action="" method="post">
                     <tr >
                         <td align="right">
-                            <strong>Filtro: </strong>
+                            <strong><p class="groove" align="center">Filtro jogos : </p>  </strong>
                         </td>
                         <td colspan="2">
                             <b>Data início</b>  <input type="date" name="dataInij" value="<?php echo $dataInij;?>">
