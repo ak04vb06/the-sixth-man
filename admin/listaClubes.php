@@ -30,7 +30,7 @@
                     <td align="center"><img src="../<?php echo $dados['clubeLogoURL']?>" width="35"></td>
                     <td align="center"><b><?php echo $dados['clubeNome']?></b></td>
                     <td align="center"><b><?php echo $dados['clubeSobrenome']?></b></td>
-                    <td align="center"><?php echo $dados['clubeConferencia']=='west'?'Conferência de Oeste':'Conferência de Este'?></td>
+                    <td align="center"><b><?php echo $dados['clubeConferencia']=='west'?'Conferência de Oeste':'Conferência de Este'?></b></td>
                     <td style="text-align: center"><a class="btn-sm btn-primary" href="editaClube.php?id=<?php echo $dados['clubeId']?>"><i class="bi bi-pencil"></i> Editar</a></td>
                     <td style="text-align: center"><a class="btn-sm btn-danger" href="eliminaClube.php?id=<?php echo $dados['clubeId']?>"><i class="bi bi-trash"></i> Eliminar</a></td>
                 </tr>
