@@ -260,7 +260,7 @@ global $con;
                                 <br>
                                 <div class="sportsmagazine-bloglarge-text">
 
-                                    <h4 align="center"><a  href="fullstanding.php"><b><p class="dotted"> Classificação Inteiria</p> </b>  </a></h4>
+                                    <h4 align="center"><a  href="fullstanding.php"><b><p class="groove">Ver Classificação Inteiria</p> </b>  </a></h4>
                                     </div>
 
                             <!--// Widget TeamRanking 2 \\-->
@@ -333,7 +333,7 @@ global $con;
 
                                     <div class="sportsmagazine-bloglarge-text">
 
-                                        <h4 align="center"><a  href="fullstanding.php"><b><p class="dotted"> Classificação Inteiria</p> </b>  </a></h4>
+                                        <h4 align="center"><a  href="fullstanding.php"><b><p class="groove">Ver Classificação Inteiria</p> </b>  </a></h4>
                                     </div>
                             <!--// Widget TeamRanking \\-->
 
