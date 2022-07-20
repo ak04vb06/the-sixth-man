@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43711f2a-ad1b-4da4-91fc-367d95c82aa8" name="Changes" comment="mais jogoss">
+    <list default="true" id="43711f2a-ad1b-4da4-91fc-367d95c82aa8" name="Changes" comment="pap finish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artigosNba.php" beforeDir="false" afterPath="$PROJECT_DIR$/artigosNba.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fullstanding.php" beforeDir="false" afterPath="$PROJECT_DIR$/fullstanding.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/body.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jogos.php" beforeDir="false" afterPath="$PROJECT_DIR$/jogos.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
       <workItem from="1657788090626" duration="9215000" />
       <workItem from="1657798456730" duration="15147000" />
       <workItem from="1657964178578" duration="51703000" />
-      <workItem from="1658196955517" duration="10940000" />
+      <workItem from="1658196955517" duration="13071000" />
     </task>
     <task id="LOCAL-00001" summary="atualizar 8Jul">
       <created>1657272039749</created>
@@ -207,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658306600626</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="pap finish">
+      <created>1658311580233</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1658311580233</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +250,7 @@
     <MESSAGE value="entrega software" />
     <MESSAGE value="mais jogos" />
     <MESSAGE value="mais jogoss" />
-    <option name="LAST_COMMIT_MESSAGE" value="mais jogoss" />
+    <MESSAGE value="pap finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="pap finish" />
   </component>
 </project>

@@ -186,15 +186,15 @@ $res=mysqli_query($con,$sql);
                                                         <th style="width: 10%">3Q</th>
                                                         <th style="width: 10%">4Q</th>
                                                     </tr>
-                                                    <tr>
-                                                        <td><?php echo $dados['sobrenomeCasa']?></td>
+                                                    <tr align="center">
+                                                        <td><b><?php echo $dados['sobrenomeCasa']?></b></td>
                                                         <td><?php echo $par[1]['casa']?></td>
                                                         <td><?php echo $par[2]['casa']?></td>
                                                         <td><?php echo $par[3]['casa']?></td>
                                                         <td><?php echo $par[4]['casa']?></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td><?php echo $dados['sobrenomeFora']?></td>
+                                                    <tr align="center">
+                                                        <td><b><?php echo $dados['sobrenomeFora']?></b></td>
                                                         <td><?php echo $par[1]['fora']?></td>
                                                         <td><?php echo $par[2]['fora']?></td>
                                                         <td><?php echo $par[3]['fora']?></td>
@@ -248,7 +248,7 @@ $res=mysqli_query($con,$sql);
 
                             </ul>
                             <ul class="sportsmagazine-info-list">
-                                <li><i class="fa fa-envelope"></i> <span><a>goatbasket@gmail.com</a></span></li>
+
                             </ul>
                         </aside>
                         <!--// Widget Contact Info \\-->

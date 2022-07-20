@@ -239,7 +239,7 @@
 
                             </ul>
                             <ul class="sportsmagazine-info-list">
-                                <li><i class="fa fa-envelope"></i> <span><a>goatbasket@gmail.com</a></span></li>
+
                             </ul>
                         </aside>
                         <!--// Widget Contact Info \\-->
@@ -250,7 +250,7 @@
                             <ul>
                                 <li>
                                     <i class="fa fa-twitter"></i> <span>@ESPNNBA</span>
-                                    <p> Isaiah Thomas está de volta a Nba , assina novo contrato de 10 dias com os hornets <a href="https://twitter.com/espnnba/status/1499215162695430149">@ESPNNBA</a></p>
+                                    <p> Isaiah Thomas está de volta a Nba, assina novo contrato de 10 dias com os hornets <a href="https://twitter.com/espnnba/status/1499215162695430149">@ESPNNBA</a></p>
 
                                 </li>
                                 <li>

@@ -119,7 +119,7 @@ function drawBottom(){
 
                             </ul>
                             <ul class="sportsmagazine-info-list">
-                                <li><i class="fa fa-envelope"></i> <span><a>goatbasket@gmail.com</a></span></li>
+
                             </ul>
                         </aside>
                         <!--// Widget Contact Info \\-->
