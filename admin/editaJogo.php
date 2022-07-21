@@ -11,7 +11,7 @@ $dados=mysqli_fetch_array($result);
 ?>
 <div class="container form ">
 
-    <h1>Novo Jogo</h1>
+    <h1>Edita Jogo</h1>
     <form action="confirmaEditaJogo.php" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>

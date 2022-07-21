@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43711f2a-ad1b-4da4-91fc-367d95c82aa8" name="Changes" comment="pap finish">
-      <change beforePath="$PROJECT_DIR$/admin/includes/body.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/body.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editaJogo.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editaJogo.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +72,7 @@
       <workItem from="1657788090626" duration="9215000" />
       <workItem from="1657798456730" duration="15147000" />
       <workItem from="1657964178578" duration="51703000" />
-      <workItem from="1658196955517" duration="18680000" />
+      <workItem from="1658196955517" duration="20585000" />
     </task>
     <task id="LOCAL-00001" summary="atualizar 8Jul">
       <created>1657272039749</created>
@@ -234,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658328753179</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="pap finish">
+      <created>1658329651997</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1658329651997</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
