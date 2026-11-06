@@ -57,9 +57,19 @@ function valid_date(?string $value): ?string
     return $d && $d->format('Y-m-d') === $value ? $value : null;
 }
 
-/** Team badge: three-letter code on the team colour (no copyrighted logos). */
+function show_logos(): bool
+{
+    global $config;
+    return !empty($config['logos']);
+}
+
+/** Team badge: the team logo, or its three-letter code on the team colour when logos are off. */
 function team_badge(array $team, string $prefix = ''): string
 {
+    $code = (string) ($team[$prefix . 'Sigla'] ?? '');
+    if (show_logos() && preg_match('/^[A-Z0-9]{3}$/', $code) && is_file(ROOT . "/assets/logos/$code.svg")) {
+        return '<span class="badge badge-logo" aria-hidden="true"><img src="' . e(url("assets/logos/$code.svg")) . '" alt=""></span>';
+    }
     return sprintf(
         '<span class="badge" style="--team:%s" aria-hidden="true">%s</span>',
         e($team[$prefix . 'Cor'] ?? '#1B2A4A'),

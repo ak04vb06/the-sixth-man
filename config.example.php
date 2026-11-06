@@ -6,6 +6,9 @@ return [
     'db_user' => 'root',
     'db_pass' => '',
     'db_name' => 'sixthman',
+    // Show the official league and team logos (assets/logos).
+    // Set to false for a public version: teams then appear as coloured badges with their code.
+    'logos'   => true,
     // Show PHP errors on screen. Keep false on a public server.
     'debug'   => false,
 ];

@@ -31,7 +31,9 @@ function page_header(string $title, string $active): void
 <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 <header class="site-header">
     <div class="wrap header-row">
-        <a class="brand" href="<?= e(url('index.php')) ?>"><?= brand_mark() ?><span>The Sixth Man</span></a>
+        <a class="brand" href="<?= e(url('index.php')) ?>"><?= show_logos()
+            ? '<img class="league-logo" src="' . e(url('assets/logos/league.svg')) . '" alt="">'
+            : brand_mark() ?><span>The Sixth Man</span></a>
         <nav aria-label="Principal">
             <?php foreach (NAV as $key => [$label, $href]): ?>
                 <a href="<?= e(url($href)) ?>"<?= $key === $active ? ' aria-current="page"' : '' ?>><?= e($label) ?></a>

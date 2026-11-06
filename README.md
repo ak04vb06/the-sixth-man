@@ -54,6 +54,10 @@ uploads/            news photos
 
 ## Data
 
-The demo data contains the results of 2 and 4 November 2026 and each team's record before those games, so the standings match the real ones as of 5 November 2026. Clubs are shown with their three-letter code and colour instead of logos.
+The demo data contains the results of 2 and 4 November 2026 and each team's record before those games, so the standings match the real ones as of 5 November 2026.
 
-This is a portfolio project, with no official link to the league or the clubs.
+## Logos
+
+By default the site shows the league and team logos from `assets/logos`. These belong to the NBA and its teams, so this version is for personal, local use. Before publishing the site, set `'logos' => false` in `config.php`: teams then appear as badges with their three-letter code and colour.
+
+This is a personal project, with no official link to the league or the clubs.
