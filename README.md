@@ -37,6 +37,34 @@ It started as my 2022 final course project (PAP). In 2026 I rewrote it: secure a
 
 If your MySQL user or password is not the XAMPP default, copy `config.example.php` to `config.php` and change the values there.
 
+## How the code works
+
+**One request, step by step.** Every page starts with `require 'includes/bootstrap.php'`. Bootstrap loads the settings from `config.php`, starts the session, opens the MySQL connection (`$db`, with `mysqli`) and loads the helpers and queries. The page then asks `queries.php` for its data, and draws the HTML with the functions of `layout.php`.
+
+```
+browser -> jogos.php -> bootstrap.php (config, session, $db)
+                     -> get_games($db, $from, $to)        queries.php
+                     -> page_header(), scoreboard(), page_footer()   layout.php
+```
+
+**Database.** Five tables: `clubes` (teams), `jogos` (games and final score), `parciais` (points per quarter, linked to a game and deleted with it), `noticias` (news) and `utilizadores` (admin accounts).
+
+**Standings.** Nothing is stored: `get_standings()` counts each team's wins and losses from the `jogos` table, adds the record from before the site started (`clubeVitoriasBase`, `clubeDerrotasBase`), sorts by win percentage and computes the games behind the leader: `((leader wins - team wins) + (team losses - leader losses)) / 2`. Adding a game in the admin updates the standings straight away.
+
+**Queries.** `fetch_all()`, `fetch_one()` and `execute()` wrap prepared statements: values are sent separately from the SQL, so user input can never change the query.
+
+```php
+fetch_all($db, 'SELECT * FROM noticias WHERE noticiaData BETWEEN ? AND ?', 'ss', [$from, $to]);
+```
+
+**Output.** Every value printed in a page goes through `e()`, which escapes HTML. A news title like `<script>` is shown as text and never runs.
+
+**Admin.** Each admin page starts with `require '_admin.php'` and `require_login()`, which sends visitors without a session to the login page. Forms carry a hidden CSRF token checked by `csrf_check()`, so another website cannot submit them in your name. After saving, the page stores a short message with `flash()` and redirects, so refreshing never submits twice.
+
+**Forms.** Each form page (`admin/jogo.php`, `clube.php`, `noticia.php`) works the same way: load the existing row if there is an `id`, validate the POST data, show the errors in the form, or save and redirect. Games are saved in a transaction together with their quarters.
+
+**Dates.** `data_pt()` writes dates in Portuguese ("4 de novembro de 2026") with its own month names, so it works on any server without locale settings.
+
 ## Project structure
 
 ```
