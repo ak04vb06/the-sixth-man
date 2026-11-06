@@ -1,6 +1,7 @@
 <?php
 // Header and footer shared by the public pages.
 
+// Menu entries: key used to highlight the current page => [label, file]
 const NAV = [
     'inicio'        => ['Início', 'index.php'],
     'jogos'         => ['Jogos', 'jogos.php'],
@@ -15,6 +16,7 @@ function brand_mark(): string
         . '<path d="M1 16h30M16 1v30M5 5c6 5 6 17 0 22M27 5c-6 5-6 17 0 22" fill="none" stroke="var(--ink)" stroke-width="1.6"/></svg>';
 }
 
+/** Opens the page: <head>, header with logo and menu. $active = key of the current menu entry. */
 function page_header(string $title, string $active): void
 {
     ?>
@@ -45,6 +47,7 @@ function page_header(string $title, string $active): void
     <?php
 }
 
+/** Closes the page opened by page_header(). */
 function page_footer(): void
 {
     ?>
@@ -64,6 +67,7 @@ function page_footer(): void
 function scoreboard(array $g, bool $large = false): string
 {
     $homeWon = $g['jogoResultadoCasa'] > $g['jogoResultadoFora'];
+    // One line per team: badge, name, score. The winner gets the 'won' class (bold, bright score)
     $row = function (string $side, int $score, bool $won) use ($g) {
         return '<div class="line' . ($won ? ' won' : '') . '">'
             . team_badge($g, $side)
@@ -82,6 +86,7 @@ function quarters_table(array $g): string
     if (count($g['quartos']) < 4) {
         return '';
     }
+    // $i = 0 for the home team, 1 for the away team
     $cells = fn(int $i) => implode('', array_map(fn($q) => '<td>' . (int) $g['quartos'][$q][$i] . '</td>', ['q1', 'q2', 'q3', 'q4']));
     return '<details class="quarters"><summary>Parciais</summary><table>'
         . '<thead><tr><th scope="col">Equipa</th><th scope="col">1.º</th><th scope="col">2.º</th><th scope="col">3.º</th><th scope="col">4.º</th><th scope="col">Final</th></tr></thead><tbody>'
@@ -95,6 +100,7 @@ function standings_table(array $teams, string $caption, ?int $limit = null): str
 {
     $rows = '';
     foreach (array_slice($teams, 0, $limit ?? count($teams)) as $i => $t) {
+        // 1st to 6th: playoffs, 7th to 10th: play-in (coloured bar on the left)
         $zone = $i < 6 ? 'playoff' : ($i < 10 ? 'playin' : '');
         $rows .= '<tr class="' . $zone . '"><td class="pos">' . ($i + 1) . '</td>'
             . '<th scope="row">' . team_badge($t, 'clube') . '<span class="team"><span class="city">' . e($t['clubeNome']) . '</span> ' . e($t['clubeSobrenome']) . '</span></th>'

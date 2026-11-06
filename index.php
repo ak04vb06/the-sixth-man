@@ -1,10 +1,12 @@
 <?php
+// Home page: last game day as a scoreboard, latest news, top 6 of each conference.
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/layout.php';
 
+// Most recent date with games, then every game of that day
 $lastDay = latest_game_day($db);
 $games = $lastDay ? get_games($db, $lastDay, $lastDay) : [];
-$news = get_news($db, null, null, 3);
+$news = get_news($db, null, null, 3);            // 3 latest news
 $east = get_standings($db, 'east');
 $west = get_standings($db, 'west');
 

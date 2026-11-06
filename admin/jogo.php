@@ -12,6 +12,7 @@ if ($id && !$game) {
     redirect('admin/jogos.php');
 }
 
+// Clubs for the two drop-down lists, and their ids to check the submitted values
 $clubs = get_clubs($db);
 $clubIds = array_map('intval', array_column($clubs, 'clubeId'));
 $data = $game ?? ['jogoData' => date('Y-m-d'), 'jogoCasaClubeId' => 0, 'jogoForaClubeId' => 0,
@@ -27,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         redirect('admin/jogos.php');
     }
 
+    // Empty field = null, whole number = int, anything else = -1 (rejected by the checks below)
     $num = fn($v) => ($v === '' || $v === null) ? null : (ctype_digit((string) $v) ? (int) $v : -1);
     $data = [
         'jogoData' => (string) ($_POST['data'] ?? ''),
@@ -44,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Validation: every problem is added to $errors and shown in the form
     if (!valid_date($data['jogoData'])) $errors[] = 'Indique uma data válida.';
     if (!in_array($data['jogoCasaClubeId'], $clubIds, true) || !in_array($data['jogoForaClubeId'], $clubIds, true)) $errors[] = 'Escolha as duas equipas.';
     elseif ($data['jogoCasaClubeId'] === $data['jogoForaClubeId']) $errors[] = 'Uma equipa não pode jogar contra si própria.';
@@ -66,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$errors) {
+        // Game and quarters saved together: if one query fails, nothing is saved
         $db->begin_transaction();
         $values = [$data['jogoData'], $data['jogoResultadoCasa'], $data['jogoResultadoFora'], $data['jogoCasaClubeId'], $data['jogoForaClubeId']];
         if ($game) {
@@ -75,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = execute($db, 'INSERT INTO jogos (jogoData, jogoResultadoCasa, jogoResultadoFora, jogoCasaClubeId, jogoForaClubeId)
                 VALUES (?, ?, ?, ?, ?)', 'siiii', $values);
         }
+        // Simplest way to update the quarters: delete the old ones, insert the new ones
         execute($db, 'DELETE FROM parciais WHERE parcialJogoId = ?', 'i', [$id]);
         foreach ($data['quartos'] as $q => [$h, $a]) {
             execute($db, 'INSERT INTO parciais (parcialQuarto, parcialCasaPontos, parcialForaPontos, parcialJogoId) VALUES (?, ?, ?, ?)',
@@ -86,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+/** <option> list of clubs grouped by conference, with $selected pre-selected. */
 function club_options(array $clubs, int $selected): string
 {
     $html = '<option value="">Escolher equipa</option>';

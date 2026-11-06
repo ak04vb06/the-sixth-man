@@ -11,6 +11,7 @@ const ADMIN_NAV = [
     'noticias' => ['Notícias', 'admin/noticias.php'],
 ];
 
+/** Sends visitors who are not logged in to the login page. Call it at the top of every admin page. */
 function require_login(): void
 {
     if (empty($_SESSION['admin'])) {
@@ -18,6 +19,7 @@ function require_login(): void
     }
 }
 
+/** Admin version of page_header(): dark bar, admin menu, and the message saved by flash() if any. */
 function admin_header(string $title, string $active): void
 {
     ?>
@@ -54,6 +56,7 @@ function admin_footer(): void
     echo "</main>\n</body>\n</html>\n";
 }
 
+/** Shows the validation errors above a form. */
 function form_errors(array $errors): void
 {
     if ($errors) {

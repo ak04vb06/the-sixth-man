@@ -17,6 +17,7 @@ $data = $news ?? ['noticiaTitulo' => '', 'noticiaData' => date('Y-m-d'), 'notici
                   'noticiaResumo' => '', 'noticiaCorpo' => ''];
 $errors = [];
 
+/** Deletes an uploaded photo, only inside uploads/ (never another file). */
 function delete_image(string $path): void
 {
     if (str_starts_with($path, 'uploads/') && is_file(ROOT . '/' . $path)) {
@@ -63,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    // Save: move the new photo into uploads/, update the row, then delete the replaced photo
     if (!$errors) {
         $oldImage = $data['noticiaImagemURL'];
         if ($newImage) {

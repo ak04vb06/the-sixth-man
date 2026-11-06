@@ -1,4 +1,5 @@
 <?php
+// News list, newest first.
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/layout.php';
 

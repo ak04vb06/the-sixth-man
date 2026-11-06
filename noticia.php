@@ -1,4 +1,5 @@
 <?php
+// One news article. Unknown id = 404 page.
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/layout.php';
 
@@ -19,7 +20,9 @@ page_header($news['noticiaTitulo'], 'noticias');
     <h1><?= e($news['noticiaTitulo']) ?></h1>
     <p class="lead"><?= e($news['noticiaResumo']) ?></p>
     <time datetime="<?= e($news['noticiaData']) ?>"><?= e(ucfirst(data_pt($news['noticiaData'], true))) ?></time>
+    <?php // Photo only if one was uploaded ?>
     <?php if ($news['noticiaImagemURL'] !== ''): ?><?= news_cover($news, 'article-image') ?><?php endif; ?>
+    <?php // The text is stored as plain text: paragraphs() escapes it and adds the <p> tags ?>
     <div class="article-body"><?= paragraphs($news['noticiaCorpo']) ?></div>
 </article>
 <?php page_footer();

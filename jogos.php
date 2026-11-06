@@ -1,11 +1,14 @@
 <?php
+// Games page: all games grouped by day, with an optional date filter.
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/layout.php';
 
+// Dates from the filter form; anything that is not a real date is ignored (null)
 $from = valid_date($_GET['de'] ?? null);
 $to = valid_date($_GET['ate'] ?? null);
 $games = get_games($db, $from, $to);
 
+// Group the games by date to show one block per day
 $byDay = [];
 foreach ($games as $g) {
     $byDay[$g['jogoData']][] = $g;

@@ -17,6 +17,7 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_check();
 
+    // Delete button: refused while games still use this club (they would lose a team)
     if (isset($_POST['apagar']) && $club) {
         $games = (int) fetch_one($db, 'SELECT COUNT(*) AS n FROM jogos WHERE ? IN (jogoCasaClubeId, jogoForaClubeId)', 'i', [$id])['n'];
         if ($games > 0) {
@@ -38,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'clubeDerrotasBase' => (int) ($_POST['derrotas'] ?? 0),
     ];
 
+    // Validation
     if ($data['clubeNome'] === '' || $data['clubeSobrenome'] === '') $errors[] = 'Indique a cidade e o nome do clube.';
     if (!preg_match('/^[A-Z0-9]{3}$/', $data['clubeSigla'])) $errors[] = 'A sigla tem de ter exatamente 3 letras (ex.: BOS).';
     if (!preg_match('/^#[0-9A-Fa-f]{6}$/', $data['clubeCor'])) $errors[] = 'Escolha uma cor válida.';

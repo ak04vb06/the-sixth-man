@@ -1,4 +1,5 @@
 <?php
+// Standings page: both conferences, calculated from the games (see get_standings()).
 require __DIR__ . '/includes/bootstrap.php';
 require __DIR__ . '/includes/layout.php';
 

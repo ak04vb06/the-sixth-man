@@ -1,6 +1,10 @@
 <?php
 // All SQL lives here, always with prepared statements when a value comes from outside.
 
+/**
+ * Runs a SELECT with prepared statement and returns all rows.
+ * $types: one letter per value, 's' = string, 'i' = integer. Example: 'si' for [$name, $id].
+ */
 function fetch_all(mysqli $db, string $sql, string $types = '', array $params = []): array
 {
     $stmt = $db->prepare($sql);
@@ -11,11 +15,13 @@ function fetch_all(mysqli $db, string $sql, string $types = '', array $params = 
     return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 }
 
+/** First row of a SELECT, or null. */
 function fetch_one(mysqli $db, string $sql, string $types = '', array $params = []): ?array
 {
     return fetch_all($db, $sql, $types, $params)[0] ?? null;
 }
 
+/** INSERT, UPDATE or DELETE. Returns the new id after an INSERT, otherwise the number of rows changed. */
 function execute(mysqli $db, string $sql, string $types = '', array $params = []): int
 {
     $stmt = $db->prepare($sql);
@@ -28,6 +34,7 @@ function execute(mysqli $db, string $sql, string $types = '', array $params = []
 
 // -- Games --------------------------------------------------------------------
 
+// Games with both teams: the clubs table is joined twice (c = home, f = away)
 const GAME_SELECT = "SELECT j.*,
         c.clubeNome AS casaNome, c.clubeSobrenome AS casaSobrenome, c.clubeSigla AS casaSigla, c.clubeCor AS casaCor,
         f.clubeNome AS foraNome, f.clubeSobrenome AS foraSobrenome, f.clubeSigla AS foraSigla, f.clubeCor AS foraCor
@@ -42,6 +49,7 @@ function get_games(mysqli $db, ?string $from = null, ?string $to = null, ?int $l
     if ($limit) {
         $sql .= ' LIMIT ' . (int) $limit;
     }
+    // No date given = no limit on that side
     $games = fetch_all($db, $sql, 'ss', [$from ?? '1900-01-01', $to ?? '2999-12-31']);
     return attach_quarters($db, $games);
 }
@@ -52,6 +60,7 @@ function get_game(mysqli $db, int $id): ?array
     return $game ? attach_quarters($db, [$game])[0] : null;
 }
 
+/** Adds $game['quartos'] = ['q1' => [home, away], ...] to each game, with ONE query for all games. */
 function attach_quarters(mysqli $db, array $games): array
 {
     if (!$games) {
@@ -85,6 +94,7 @@ function latest_game_day(mysqli $db): ?string
  */
 function get_standings(mysqli $db, string $conference): array
 {
+    // For each club, count the games it won and lost, at home or away
     $teams = fetch_all($db, "SELECT c.*,
             SUM(CASE WHEN (j.jogoCasaClubeId = c.clubeId AND j.jogoResultadoCasa > j.jogoResultadoFora)
                        OR (j.jogoForaClubeId = c.clubeId AND j.jogoResultadoFora > j.jogoResultadoCasa) THEN 1 ELSE 0 END) AS vitorias,
@@ -103,6 +113,7 @@ function get_standings(mysqli $db, string $conference): array
     }
     unset($t);
 
+    // Best win percentage first; same percentage: more wins first, then alphabetical
     usort($teams, fn($a, $b) => [$b['pct'], $b['vitorias'], $a['clubeNome']] <=> [$a['pct'], $a['vitorias'], $b['clubeNome']]);
 
     $leader = $teams[0] ?? null;
@@ -112,6 +123,7 @@ function get_standings(mysqli $db, string $conference): array
     return $teams;
 }
 
+/** 0.75 -> ".750", the usual way to write a win percentage */
 function format_pct(float $pct): string
 {
     return $pct >= 1 ? '1.000' : '.' . str_pad((string) round($pct * 1000), 3, '0', STR_PAD_LEFT);

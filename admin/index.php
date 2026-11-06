@@ -2,6 +2,7 @@
 require __DIR__ . '/_admin.php';
 require_login();
 
+// Number of rows in a table (table names are fixed in the code, never from the user)
 $count = fn(string $table) => (int) fetch_one($db, "SELECT COUNT(*) AS n FROM $table")['n'];
 $last = latest_game_day($db);
 

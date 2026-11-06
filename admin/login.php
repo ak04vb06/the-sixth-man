@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim((string) ($_POST['nome'] ?? ''));
     $password = (string) ($_POST['password'] ?? '');
 
+    // First run: create the account, then log in with it just below
     if ($firstRun) {
         if (strlen($name) < 3 || strlen($password) < 8) {
             $error = 'Escolha um nome com pelo menos 3 caracteres e uma palavra-passe com pelo menos 8.';
@@ -24,9 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!$firstRun && $error === '') {
+        // password_verify() compares with the hash stored by password_hash()
         $user = fetch_one($db, 'SELECT * FROM utilizadores WHERE utilizadorNome = ?', 's', [$name]);
         if ($user && password_verify($password, $user['utilizadorPassword'])) {
-            session_regenerate_id(true);
+            session_regenerate_id(true);   // new session id at login (prevents session fixation)
             $_SESSION['admin'] = ['id' => $user['utilizadorId'], 'nome' => $user['utilizadorNome']];
             redirect('admin/index.php');
         }
